@@ -17,3 +17,4 @@ A clean, accessible profile page that includes:
 - How to initialize Git and push code to GitHub (with a few bumps along the way 😅)
 
 ## 📁 Folder Structure
+30-day-sprint/ └── week-1/ └── day-1/ ├── index.html └── style.css  ← coming on Day 2
