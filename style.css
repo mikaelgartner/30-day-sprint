@@ -1,0 +1,76 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #333333;
+    --accent: chocolate;
+    --highlight: #555555;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+h1 {
+    color: var(--text);
+    text-align:center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    line-height: 1.5;
+} 
+
+h2 {
+    color: var(--text);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+p {
+    color: var(--accent);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 5px;
+    text-align: justify;
+}
+
+img {
+    display: block;
+    margin:auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 8px rgba(0,0,0,0.3);
+    padding: 4px;
+    background-color: var(--highlight);
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    display: block;
+    margin: 2px;
+    padding: 2px;
+}
+
+a:hover {
+    color: var(--highlight);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
