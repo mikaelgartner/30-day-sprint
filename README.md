@@ -18,3 +18,36 @@ A clean, accessible profile page that includes:
 
 ## 📁 Folder Structure
 30-day-sprint/ └── week-1/ └── day-1/ ├── index.html └── style.css  ← coming on Day 2
+
+# 🎨 Day 2: Profile Page with CSS Styling
+
+This is my Day 2 project from the 30-Day Front-End Developer Sprint. I built a personal profile page using semantic HTML and styled it with external CSS.
+
+## ✅ Features
+
+- Clean layout with centered headings and links
+- Custom fonts for headings and paragraphs
+- Styled images with rounded corners and shadows
+- Link hover effects with smooth transitions
+- Bullet-free lists and centered navigation
+- CSS variables for theme colors
+
+## 📁 Files
+
+- `index.html` — HTML structure of the profile page
+- `style.css` — External stylesheet with all styling rules
+
+## 🚀 Live Preview
+
+Coming soon — stay tuned!
+
+## 🛠️ What I Learned
+
+- How to link external CSS
+- How to use CSS variables for cleaner styling
+- How to style text, images, and links
+- How to push changes to GitHub using Git
+
+---
+Next up: **Day 3 — Flexbox Layouts!**
+
