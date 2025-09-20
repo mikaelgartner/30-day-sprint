@@ -51,7 +51,7 @@ Coming soon — stay tuned!
 ---
 Next up: **Day 3 — Flexbox Layouts!**
 
-🟥 Day 3: Layouts — Flexbox & Git Mastery
+# 🟥 Day 3: Layouts — Flexbox & Git Mastery
 Today’s Wins:
 - 🎨 Built a responsive card layout using Flexbox
 - 🖼️ Styled cards with gradients, shadows, and hover effects
