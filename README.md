@@ -51,3 +51,19 @@ Coming soon — stay tuned!
 ---
 Next up: **Day 3 — Flexbox Layouts!**
 
+🟥 Day 3: Layouts — Flexbox & Git Mastery
+Today’s Wins:
+- 🎨 Built a responsive card layout using Flexbox
+- 🖼️ Styled cards with gradients, shadows, and hover effects
+- 📱 Added media queries for mobile responsiveness
+- 🔀 Resolved a Git merge conflict between main and master
+- 🧹 Cleaned up duplicate assets and organized image files
+- 🚀 Successfully pushed Day 3 work to the main branch on GitHub
+- ✅ Verified layout integrity and responsiveness in browser
+
+Reflection:
+Today wasn’t just about layout — it was a deep dive into real-world Git challenges. I learned how to merge branches, resolve conflicts, and keep my repo clean. The card layout now looks sharp and adapts beautifully across screen sizes. 
+
+Feeling proud and ready for Day 4!
+
+
