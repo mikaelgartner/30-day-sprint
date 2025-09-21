@@ -52,6 +52,7 @@ Coming soon — stay tuned!
 Next up: **Day 3 — Flexbox Layouts!**
 
 # 🟥 Day 3: Layouts — Flexbox & Git Mastery
+
 Today’s Wins:
 - 🎨 Built a responsive card layout using Flexbox
 - 🖼️ Styled cards with gradients, shadows, and hover effects
@@ -65,5 +66,19 @@ Reflection:
 Today wasn’t just about layout — it was a deep dive into real-world Git challenges. I learned how to merge branches, resolve conflicts, and keep my repo clean. The card layout now looks sharp and adapts beautifully across screen sizes. 
 
 Feeling proud and ready for Day 4!
+
+# 🟥 Day 4: Responsive Design
+
+Today I focused on making my Flexbox card layout responsive across different screen sizes. I used media queries to adapt the layout for mobile, tablet, and desktop views.
+Key updates:
+- Added media queries for max-width: 600px and max-width: 768px to stack cards vertically and center them on smaller screens
+- Added a min-width: 1200px media query to switch to a desktop layout using width: 30% for each card
+- Preserved Flexbox behavior globally with flex: 3 1 250px on .card, which ensures cards grow and shrink smoothly across breakpoints
+- Used max-width: 600px to prevent cards from stretching too wide
+- Moved transition: transform 0.3s ease to the base .card class for consistent hover animation
+- Fixed a typo in the HTML and cleaned up redundant CSS declarations
+- Verified layout behavior using DevTools and device emulation
+
+This was a deep dive into how Flexbox and media queries interact — and how combining flex-basis with percentage-based widths can give you precise control over layout across screen sizes.
 
 
