@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mikaels Simple Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .error {
+                border: 2px solid red;
+                background-color: #ffe6e6;
+            }
+
+            .flash {
+                animation: flashResult 0.8s ease;
+            }
+
+            @keyframes flashResult {
+                0% { background-color: #d4edda; }
+                50% { background-color: #c3e6cb; }
+                100% { background-color: transparent; }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Mikaels Simple Calculator</h1>
+        <input type="number" id="num1" placeholder="First Number">
+        <input type="number" id="num2" placeholder="Second Number">
+        <br><br>
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">x</button>
+        <button onclick="calculate('/')">÷</button>
+        <button onclick="resetCalculator()">Reset</button>
+        <br><br>
+        <h2>Result: <span id="result">?</span></h2>
+
+        <script src="script.js"></script>
+    </body>
+</html>
