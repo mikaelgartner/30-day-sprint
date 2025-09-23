@@ -104,3 +104,28 @@ This was a deep dive into how Flexbox and media queries interact — and how com
 - Add speech synthesis
 - Add keyboard support
 - Add history log
+
+# 📅 Day 6: DOM Manipulation & History Log Upgrade
+
+## 📚 What I Learned
+- DOM selection with `document.querySelector` and `getElementById`
+- Event handling using `addEventListener`
+- Creating and appending elements dynamically with `createElement` and `appendChild`
+- Managing DOM content with `removeChild` to limit history entries
+- Formatting timestamps using `new Date().toLocaleTimeString()`
+- Styling inputs, buttons, and layout with modern CSS
+- Writing clean, readable commits and pushing updates to GitHub 🚀
+
+## 🛠️ What I Built
+✅ A polished calculator with:
+- Dynamic history log that tracks the last 5 calculations 🧮  
+- Timestamps for each entry 🕒  
+- Clean layout and responsive styling 🎨  
+- Error handling and visual feedback  
+- GitHub commit with clear message and updated README 📄
+
+## 🔜 Next Steps
+- Add keyboard support ⌨️  
+- Add speech synthesis 🗣️  
+- Add dark mode toggle 🌙  
+- Save history to `localStorage` for persistence 💾
