@@ -42,6 +42,25 @@ function calculate(operator) {
     }
 
     document.getElementById("result").textContent = result;
+
+    const displayOperator = {
+        "+": "+",
+        "-": "-",
+        "*": "x",
+        "/": "÷"
+    };
+
+    const time = new Date().toLocaleTimeString();
+
+    const historyItem = document.createElement("li");
+    historyItem.textContent = `${num1} ${displayOperator[operator]} ${num2} = ${result} (${time})`;
+    
+    const historyLog = document.getElementById("historyLog");
+    historyLog.appendChild(historyItem);
+
+    if (historyLog.children.length > 5) {
+        historyLog.removeChild(historyLog.firstChild);
+    }
     
     const resultBox = document.getElementById("result");
     resultBox.classList.remove("flash"); // Remove old animation
@@ -55,5 +74,12 @@ function calculate(operator) {
 function resetCalculator() {
     document.getElementById("num1").value = "";
     document.getElementById("num2").value = "";
-    document.getElementById("result").textContent = "?";
+    document.getElementById("result").textContent = "?"; // Reset result display
+    document.getElementById("historyLog").innerHTML = ""; // Reset history log
 }
+
+document.querySelector("#addBtn").addEventListener("click", () => calculate("+"));
+document.querySelector("#subtractBtn").addEventListener("click", () => calculate("-"));
+document.querySelector("#multiplyBtn").addEventListener("click", () => calculate("*"));
+document.querySelector("#divideBtn").addEventListener("click", () => calculate("/"));
+document.querySelector("#resetBtn").addEventListener("click", resetCalculator);

@@ -19,6 +19,61 @@
                 50% { background-color: #c3e6cb; }
                 100% { background-color: transparent; }
             }
+
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                text-align: center;
+                padding: 20px;
+            }
+
+            input[type="number"] {
+                padding: 10px;
+                margin: 5px;
+                width: 200px;
+                font-size: 20px;
+                border: 2px solid #ccc;
+                border-radius: 4px;    
+            }
+
+            button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 18px;
+                border: none;
+                border-radius: 4px;
+                background-color: #0078D4;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #005A9E;
+            }
+
+            #result {
+                font-size: 24px;
+                font-weight: bold;
+                color: #0078D4;
+            }
+
+            #historyLog {
+                list-style: none;
+                padding: 0;
+                margin-top: 10px;
+                font-family: monospace;
+                color: #555;
+            }
+
+            #historyLog li {
+                margin-bottom: 4px;
+                color: #0078D4;
+                font-size: 24px;
+
+            }
+            
         </style>
     </head>
     <body>
@@ -26,13 +81,16 @@
         <input type="number" id="num1" placeholder="First Number">
         <input type="number" id="num2" placeholder="Second Number">
         <br><br>
-        <button onclick="calculate('+')">+</button>
-        <button onclick="calculate('-')">-</button>
-        <button onclick="calculate('*')">x</button>
-        <button onclick="calculate('/')">÷</button>
-        <button onclick="resetCalculator()">Reset</button>
-        <br><br>
+        <button id="addBtn">+</button>
+        <button id="subtractBtn">-</button>
+        <button id="multiplyBtn">x</button>
+        <button id="divideBtn">÷</button>
+        <button id="resetBtn">Reset</button>
+        <br><br><br>
         <h2>Result: <span id="result">?</span></h2>
+        <br>
+        <h3>Calculation History:</h3>
+        <ul id="historyLog"></ul>
 
         <script src="script.js"></script>
     </body>
