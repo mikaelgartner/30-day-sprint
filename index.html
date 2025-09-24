@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pixel Power - Retro Games Galore</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <h1>🎮 Pixel Power 🎮</h1>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        <button>Browse Games</button>
+        <br><br>
+        <section id="home">
+            <div class="centered-image">
+                <img src="Retro-80.jpg" alt="Retro Gaming">
+            </div>
+            <p>Discover a world where classic games meet modern technology.
+                Dive into our extensive library of retro games,
+                from pixelated adventures to 8-bit classics.
+                Whether you're a seasoned gamer or new to the scene,
+                Pixel Power has something for everyone.
+            </p>
+            <h2>Pixel Power: Retro Games Reimagined</h2>
+            <h3>Featured Games</h3>
+        </section>
+        <section id="games">
+            <div class="game-card">
+                <img src="space-invaders.jpg" alt="Space Invaders gameplay">
+                <h4>Space Invaders</h4>
+                <p>Defend Earth from pixelated Aliens in this arcade classic.</p>
+            </div>
+            <div class="game-card">
+                <img src="super-mario-world.jpg" alt="Super Mario gameplay">
+                <h4>Super Mario World</h4>
+                <p>Jump, glide, and ride Yoshi through vibrant worlds in this side-scrolling masterpiece.
+                    Collect coins, dodge Koopas, and rescue Princess Peach in one of the most beloved platformers of all time.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="zelda-ocarina-of-time1.jpg" alt="Zelda gameplay">
+                <h4>The Legend of Zelda: Ocarina of Time</h4>
+                <p>Embark on an epic quest across Hyrule to master time and defeat evil.
+                    Solve puzzles, explore dungeons, and wield the Master Sword in this legendary 3D adventure.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="pokemon-red-blue1.jpg" alt="Pokemon gameplay">
+                <h4>Pokémon Red/Blue</h4>
+                <p>Catch, train, and battle your way to the top in this handheld RPG classic.
+                    Explore Kanto, collect all 151 Pokémon, and become the ultimate Champion — all in glorious 8-bit style.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="tetris.jpg" alt="Tetris gameplay">
+                <h4>Tetris</h4>
+                <p>Stack, rotate, and clear lines in the puzzle game that defined a generation.
+                    Challenge your reflexes and spatial skills as falling blocks speed up — simple to learn, impossible to master.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="pacman.jpg" alt="Pacman gameplay">
+                <h4>Pacman</h4>
+                <p>Chomp your way through mazes while dodging colorful ghosts in this arcade icon.
+                    Collect pellets, grab power-ups, and outsmart Blinky, Pinky, Inky, and Clyde in a race for high scores.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="sonic-the-hedgehog.jpg" alt="Sonic gameplay">
+                <h4>Sonic The Hedgehog</h4>
+                <p>Blast through loops, collect rings, and defeat Dr. Robotnik in this high-speed platformer.
+                    With lightning-fast gameplay and attitude to match, Sonic brought blue blur energy to the 16-bit era.
+                </p>
+            </div>
+            <div class="game-card">
+                <img src="street-fighter2.jpg" alt="Street Fighter gameplay">
+                <h4>Street Fighter</h4>
+                <p>Choose your fighter and battle across the globe in this legendary arcade brawler.
+                    Master combos, unleash special moves, and prove your skill in pixel-perfect duels from Tokyo to Rio.
+                </p>
+            </div>
+
+        </section>
+
+        <footer>
+        <p>&copy; 2025 Pixel Power. All rights reserved.</p>
+        <p>Follow us:</p>
+        <p>Contact us:</p>
+        <p>Subscribe to our newsletter</p>
+        <p>Terms of Service | Privacy Policy</p>
+        <p>Designed by the Pixel Power Team</p>
+        <p>Version 1.0.0</p>
+        <p>Last updated 24 september 2025</p>
+    </footer>
+    
+    <audio id ="bg-music" src="8bit-music.mp3" autoplay loop preload muted></audio>
+    <audio id="click-sound" src="8bit-click.mp3" preload="auto"></audio>
+
+    <script>
+        const bgMusic = document.getElementById("bg-music");
+        const clickSound = document.getElementById("click-sound");
+        const browseBtn = document.querySelector("button");
+        const gamesSection = document.getElementById("games");
+
+        browseBtn.addEventListener("click", () => {
+            //Play click sound
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            //Unmute and start background music
+            bgMusic.muted = false;
+            bgMusic.volume = 0.7;
+            bgMusic.play();
+
+            //Smooth scroll to games section
+            gamesSection.scrollIntoView({ behavior: "smooth" });
+
+            //Fade in game cards
+            document.querySelectorAll(".game-card").forEach(card => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+            });
+
+            //Hide the button after activation
+            browseBtn.style.display = "none";
+        });
+    </script>
+
+    </body>
+</html>
