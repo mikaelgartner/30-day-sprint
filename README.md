@@ -130,7 +130,7 @@ This was a deep dive into how Flexbox and media queries interact — and how com
 - Add dark mode toggle 🌙  
 - Save history to `localStorage` for persistence 💾
 
-## 🎮 Day 7: Landing Page Project – Pixel Power
+# 🎮 Day 7: Landing Page Project – Pixel Power
 
 ### ✅ Accomplishments
 
