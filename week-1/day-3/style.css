@@ -1,0 +1,104 @@
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: maroon;
+    font-size: 40px;
+    text-align: center;
+    background-color: lightsalmon;
+    background: linear-gradient(to bottom right, lightsalmon, peachpuff);
+    padding: 20px;
+    margin: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.3);
+    border: 2px solid darkred;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  flex: 3 1 250px;
+  max-width: 600px;
+  background-color: lightsalmon;
+  background: linear-gradient(to bottom right, lightsalmon, peachpuff);
+  border-radius: 8px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.3);
+  padding: 20px;
+  text-align: center;
+  border: 2px solid darkred;
+  transition: transform 0.3s;
+}
+
+.card:nth-child(3) {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.3);
+    border: 2px solid darkred;
+}
+
+.card img {
+  transition: transform 0.3s ease;
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid darkred;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: maroon;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Additional styles can be added as needed */
+
+/* Media Query */
+@media (max-width: 600px) {
+    .card-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .card-wrapper {
+        flex-direction: column;
+        align-items: center;
+  }
+  .card {
+        width: 80%;
+        margin-bottom: 20px;
+  }
+}
+@media (min-width: 1200px) {
+    .card {
+        width: 30%;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+}

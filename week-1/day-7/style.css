@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+:root {
+    --bg-color: #0f0f0f;
+    --accent-color: #ff00ff;
+    --highlight-color: #00ffff;
+    --button-color: #ffff00;
+    --text-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Press Start 2P', monospace;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px;
+}
+nav a {
+    font-size: 22px;
+    color: var(--button-color);
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.centered-image {
+    text-align: center;
+    margin: 0 0;
+}
+
+.centered-image img {
+    max-width: 90%;
+    height: auto;
+}
+
+.banner {
+    background:linear-gradient(135 deg, var(--accent-color), var(--highlight-color));
+    padding: 40px;
+    margin: 40px;
+    text-align: center;
+    border-bottom: 2px solid var(--button-color);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: var(--bg-color);
+    text-shadow: 2px 2px var(--button-color);
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+}
+
+h2, h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+p {
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 20px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Press Start 2P', monospace;
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+#games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-card {
+    flex: 1 1 400px;
+    max-width: 400px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--highlight-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px var(--highlight-color);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.game-card img {
+    max-height: 250px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--button-color);
+}
+.game-card img:hover {
+    box-shadow: 0 0 15px var(--highlight-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.game-card h4 {
+    text-align: center;
+    color: var(--highlight-color);
+}
+
+/* Mimics the look of old CRT monitors by adding a scanline overlay across screen */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Flickering effect for retro arcade monitor vibes */ 
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.80; }
+    100% { opacity: 0.90; }
+}
+
+body::before {
+    animation: flicker 0.07s infinite;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px var(--accent-color); }
+  50% { text-shadow: 0 0 20px var(--button-color); }
+  100% { text-shadow: 0 0 5px var(--accent-color); }
+}
+
+.banner h1 {
+  animation: glow 3s infinite;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+
+    .game-card {
+        flex: 1 1 100%;
+        max-width: 90%;
+    }
+    
+    .banner h1 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
