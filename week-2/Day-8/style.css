@@ -57,6 +57,20 @@ button:hover {
   background-color: #005ea2;
 }
 
+button.clear {
+  margin-top: 10px;
+  background-color: #e81123;
+}
+
+button.clear:hover {
+  background-color: #c50f1f;
+}
+
+#clearButton {
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -72,6 +86,11 @@ li {
   border-radius: 6px;
 }
 
+li small {
+  color: #666;
+  font-size: 12px;
+}
+
 li span {
   flex-grow: 1;
   margin-left: 10px;
@@ -85,4 +104,14 @@ input[type="checkbox"] {
 li span.done {
   text-decoration: line-through;
   color: #888;
+}
+
+#completedTasks li {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+#completedTasks h2 {
+  margin-top: 30px;
+  color: #555;
 }
