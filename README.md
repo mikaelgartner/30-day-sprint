@@ -200,3 +200,25 @@ Today I dove deep into JavaScript arrays and loop logic. I learned how to manipu
 Files: `index.html`, `style.css`, `script.js`
 
 Next up: Day 9 — Refactoring with objects and adding deeper task logic!
+
+# 🟧 Day 9: Objects & Functions — Summary
+
+### ✅ Accomplishments
+- 🧠 Refactored the to-do list to use **object-oriented logic** via a `Task` constructor
+- 🛠️ Implemented a `toggleDone()` method using **JavaScript prototypes**
+- 🕒 Added **timestamps** for both task creation (`createdAt`) and completion (`completedAt`)
+- 🧹 Split tasks into **Active** and **Completed** sections for better UX
+- 👁️ Dynamically showed/hid headers and buttons based on task state
+- 🧪 Logged task object changes to the console for debugging and verification
+
+### 📚 Key Learnings
+- 🧱 How to structure data using **JavaScript objects**
+- 🔁 How to use **functions and prototypes** to encapsulate behavior
+- 🧩 How to manage **task state** and update the DOM accordingly
+- 🧼 How to build a **responsive UI** that adapts to content
+- 🧠 How to think in terms of **object lifecycle** (creation, update, completion, removal)
+
+### 🎯 Next Up: Day 10
+- Refactor inline event handlers to `addEventListener`
+- Add a theme toggle (light/dark mode)
+- Use CSS classes to switch themes dynamically
