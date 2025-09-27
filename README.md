@@ -222,3 +222,28 @@ Next up: Day 9 — Refactoring with objects and adding deeper task logic!
 - Refactor inline event handlers to `addEventListener`
 - Add a theme toggle (light/dark mode)
 - Use CSS classes to switch themes dynamically
+
+
+# 🟧 Day 10: Events & DOM — Learnings & Achievements
+
+### 📚 Key Learnings
+
+- 🖱️ Mastered `addEventListener()` for modular event handling
+- 🧱 Refactored DOM rendering using `createElement()` instead of inline HTML
+- ✅ Dynamically attached behavior to checkboxes and buttons
+- 🎞️ Used `animationend` events to control animation timing
+- 🎨 Applied `accent-color` to theme native form elements like checkboxes
+- 🌗 Implemented light/dark mode toggle using CSS classes and JS logic
+- 🧠 Tracked the last added task to trigger animations selectively
+- 🧼 Practiced clean separation of logic, styling, and structure
+
+### 🏆 Achievements
+
+- 🔧 Refactored task rendering to eliminate all inline `onclick` attributes
+- ✨ Added entrance animation for newly added tasks using `@keyframes`
+- 🛡️ Prevented animation replay on auto-refresh with smart flag logic
+- 🌙 Built a minimal, icon-only theme toggle button with hover effects
+- 🖤 Styled dark mode with consistent colors, shadows, and contrast
+- 🧲 Customized checkbox appearance for dark mode using `accent-color`
+- ⌨️ Made task input respond to Enter key for smoother UX
+- 🧩 Created a polished, responsive, and theme-aware to-do app
