@@ -39,6 +39,8 @@ function timeSince(date) {
 // 1. We start with an empty array to hold the future tasks
 let tasks = [];
 
+let lastAddedIndex = null;
+
 // 2. This function adds a task to the array and updates the list
 function addTask() {
     const input = document.getElementById("taskInput");
@@ -46,9 +48,10 @@ function addTask() {
 
     if (taskText !== "") {      //if the taskText that comes from input is not empty
         tasks.push(new Task(taskText)); //creates new Task object and stores it in array
+        lastAddedIndex = tasks.length -1;   //Track the new tasks index
         input.value = "";       //clear the input field for further added tasks
         renderTasks();          //Show updated list
-        console.log(tasks[tasks.length -1]);
+        console.log(tasks[lastAddedIndex]);
     }
 }
 
@@ -82,18 +85,35 @@ function renderTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
 
-        li.innerHTML = `
-            <input type="checkbox" ${task.done ? "checked" : ""} onclick="toggleDone(${index})">
-            <span style="text-decoration: ${task.done ? "line-through" : "none"}">
-            ${task.text} 
-            <br>
-            <small title="Task created at: ${task.createdAt.toLocaleString()}">
+        if (index === lastAddedIndex) {
+            li.classList.add("animate");    // Trigger entrance animation
+            li.addEventListener("animationend", () => {
+            li.classList.remove("animate");
+            });
+        }
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = task.done;
+            checkbox.addEventListener("click", () => toggleDone(index));
+
+            const span = document.createElement("span");
+            span.style.textDecoration = task.done ? "line-through" : "none";
+            span.innerHTML = `
+                ${task.text}<br>
+                <small title="Task created at: ${task.createdAt.toLocaleString()}">
                 Added ${timeSince(task.createdAt)}
-            </small>
-            ${task.done && task.completedAt ? `<br><small title="Completed at: ${task.completedAt.toLocaleString()}">Completed ${timeSince(task.completedAt)}</small>` : ""}
-            </span>
-            <button onclick="removeTask(${index})">Remove</button>
-            `;
+                </small>
+                ${task.done && task.completedAt ? `<br><small title="Completed at: ${task.completedAt.toLocaleString()}">Completed ${timeSince(task.completedAt)}</small>` : ""}
+                `;
+
+                const removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.addEventListener("click", () => removeTask(index));
+
+                li.appendChild(checkbox);
+                li.appendChild(span);
+                li.appendChild(removeBtn);
             
             if (task.done) {
                 completedList.appendChild(li);
@@ -108,6 +128,9 @@ function renderTasks() {
     activeHeader.style.display = hasActive ? "block" : "none";
     completedHeader.style.display = hasCompleted ? "block" : "none";
     clearButton.style.display = hasCompleted ? "inline-block" : "none";
+
+    // Reset animation flag
+    lastAddedIndex = null;
 }
 
 // Clear completed tasks
@@ -120,4 +143,21 @@ function clearCompleted() {
 setInterval(renderTasks, 60000); // updates every 60 seconds
 
 // ensure UI is clean on initial load
-renderTasks(); // ensures UI is clean on initial load
+renderTasks(); // ensures UI is clean on initial loads
+
+// Attach event listeners after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".input-group button").addEventListener("click", addTask);
+    document.getElementById("clearButton").addEventListener("click", clearCompleted);
+});
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector(".container").classList.toggle("dark-mode");
+});
+
+document.getElementById("taskInput").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        addTask();
+    }
+});
