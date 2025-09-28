@@ -107,3 +107,5 @@ Next up: Day 9 — Refactoring with objects and adding deeper task logic!
 - 🧼 Cleaned up error visibility using `display: none` and conditional toggling  
 - 🧩 Integrated validation into your existing task flow without breaking structure  
 - 🧠 Reflected critically on browser vs JS validation and made an informed design choice
+
+---
