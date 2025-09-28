@@ -44,15 +44,29 @@ let lastAddedIndex = null;
 // 2. This function adds a task to the array and updates the list
 function addTask() {
     const input = document.getElementById("taskInput");
+    const taskErrors = document.getElementById("taskErrors");
     const taskText = input.value.trim();
 
-    if (taskText !== "") {      //if the taskText that comes from input is not empty
-        tasks.push(new Task(taskText)); //creates new Task object and stores it in array
-        lastAddedIndex = tasks.length -1;   //Track the new tasks index
-        input.value = "";       //clear the input field for further added tasks
-        renderTasks();          //Show updated list
-        console.log(tasks[lastAddedIndex]);
+    taskErrors.innerHTML = "";  //Clear old errors
+
+    //check if taskText is empty, and if it is prompt user to add text
+    if (!taskText) {
+        taskErrors.style.display = "block";
+        taskErrors.innerHTML = "<p>Please enter a task before adding</p>";
+        return;
     }
+
+    taskErrors.classList.add("fade-out");
+    setTimeout(() => {
+        taskErrors.style.display = "none";
+        taskErrors.classList.remove("fade-out");
+    }, 400);
+
+    tasks.push(new Task(taskText)); //creates new Task object and stores it in array
+    lastAddedIndex = tasks.length -1;   //Track the new tasks index
+    input.value = "";       //clear the input field for further added tasks
+    renderTasks();          //Show updated list
+    console.log(tasks[lastAddedIndex]);
 }
 
 // this function flips the done status of the task object and rerenders
