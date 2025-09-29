@@ -12,6 +12,7 @@ body {
   align-items: flex-start;
   padding: 40px;
   min-height: 100vh;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .container {
@@ -21,18 +22,21 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 h1 {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .input-group {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 input[type="text"] {
@@ -41,6 +45,7 @@ input[type="text"] {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 button {
@@ -51,6 +56,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 button:hover {
@@ -68,12 +74,13 @@ button.clear:hover {
 
 #clearButton {
   margin-top: 10px;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 li {
@@ -84,21 +91,25 @@ li {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 6px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 li small {
   color: #666;
   font-size: 12px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 li span {
   flex-grow: 1;
   margin-left: 10px;
   font-size: 16px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 input[type="checkbox"] {
   transform: scale(1.2);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 li span.done {
@@ -128,7 +139,7 @@ li span.done {
 }
 
 li.animate {
-  animation: fadeInSlide 0.4s ease-out;
+  animation: fadeInSlide 0.5s ease-out;
 }
 
 body.dark-mode {
@@ -173,7 +184,7 @@ body.dark-mode {
   cursor: pointer;
   padding: 6px;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
 }
 
 #themeToggle:hover {
@@ -188,7 +199,7 @@ body.dark-mode {
   background-color: #ffe5e5;
   border-left: 4px solid #e81123;
   border-radius: 4px;
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 body.dark-mode .error-message {
@@ -196,6 +207,16 @@ body.dark-mode .error-message {
   color: #ff4d4d;
   border-left: 4px solid #ff4d4d;
   box-shadow: 0 0 8px #ff4d4d;
+}
+
+@keyframes toggleRotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#themeToggle.animate {
+  animation: toggleRotate 0.5s ease-out;
 }
 
 
@@ -211,7 +232,7 @@ body.dark-mode .error-message {
 }
 
 .fade-out {
-  animation: fadeOut 0.4s ease forwards;
+  animation: fadeOut 0.5s ease forwards;
 }
 
 @keyframes fadeOut {
@@ -219,4 +240,26 @@ body.dark-mode .error-message {
     opacity: 0;
     transform: translateY(-4px);
   }
+}
+
+.empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  opacity: 0.8;
+  animation: fadeIn 0.5s ease-out;
+}
+
+body.dark-mode .empty-message {
+  color: #aaa;
+}
+
+@keyframes completePulse {
+  0% { transform: scale(1); background-color: inherit; }
+  50% { transform: scale(1.1); background-color: #87db9b; }
+  100% { transform: scale(1); background-color: inherit; }
+}
+
+li.completed-animate {
+  animation: completePulse 2s ease-out;
 }

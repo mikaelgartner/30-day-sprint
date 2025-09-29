@@ -1,3 +1,14 @@
+const tadaSound = new Audio("tada-fanfare.mp3");
+tadaSound.volume = 0.9;
+tadaSound.preload = "auto";
+
+// Prime it silently once
+tadaSound.play().then(() => {
+  tadaSound.pause();
+  tadaSound.currentTime = 0;
+});
+
+
 // Task constructor function
 function Task(text) {
     this.text = text;
@@ -9,6 +20,11 @@ function Task(text) {
 Task.prototype.toggleDone = function () {
     this.done = !this.done;
     this.completedAt = this.done ? new Date() : null;
+}
+
+// Helper function: saving tasks with localStorage
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // Helper function: time since creation of task
@@ -35,11 +51,30 @@ function timeSince(date) {
 }
 
 
-
 // 1. We start with an empty array to hold the future tasks
 let tasks = [];
-
 let lastAddedIndex = null;
+let hasCelebrated = false;
+
+
+const saved = localStorage.getItem("tasks");
+if (saved) {
+    const parsed = JSON.parse(saved);
+    tasks = parsed.map(obj => {
+        const task = new Task(obj.text);
+        task.done = obj.done;
+        task.createdAt = new Date(obj.createdAt);
+        task.completedAt = obj.completedAt ? new Date(obj.completedAt) : null;
+        return task;
+    });
+}
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    document.querySelector(".container").classList.add("dark-mode");
+}
+
 
 // 2. This function adds a task to the array and updates the list
 function addTask() {
@@ -56,13 +91,19 @@ function addTask() {
         return;
     }
 
+    // Fade out error message
     taskErrors.classList.add("fade-out");
     setTimeout(() => {
         taskErrors.style.display = "none";
         taskErrors.classList.remove("fade-out");
-    }, 400);
+    }, 500);
+
+    // After validation and before rendering
+    localStorage.setItem("hasUsedTasks", true);
 
     tasks.push(new Task(taskText)); //creates new Task object and stores it in array
+    hasCelebrated = false;  //Reset celebration flag here
+    saveTasks();
     lastAddedIndex = tasks.length -1;   //Track the new tasks index
     input.value = "";       //clear the input field for further added tasks
     renderTasks();          //Show updated list
@@ -72,13 +113,26 @@ function addTask() {
 // this function flips the done status of the task object and rerenders
 function toggleDone(index) {
     tasks[index].toggleDone(); //flip the done status
+    saveTasks();
     renderTasks();
+    console.log(tasks[index]);
+
+    // Add animation to the completed task
+    const taskList = tasks[index].done ? document.getElementById("completedTasks") : document.getElementById("activeTasks");
+    const listItem = taskList.children[index];
+    if (listItem) {
+        listItem.classList.add("completed-animate");
+        setTimeout(() => {
+            listItem.classList.remove("completed-animate");
+        }, 500);    // Match animation duration
+    }
     console.log(tasks[index]);
 }
 
 // 3. This function removes a task by index
 function removeTask(index) {
     tasks.splice(index, 1);     //Remove task from array
+    saveTasks();
     renderTasks();              //Show updated list
 }
 
@@ -138,6 +192,25 @@ function renderTasks() {
             }
     });
 
+    const hasUsedTasks = localStorage.getItem("hasUsedTasks") === "true";
+
+    function celebrateCompletion() {
+    confetti({
+        particleCount: 500,
+        spread: 100,
+        origin: { y: 0.5 }
+    });
+
+    tadaSound.currentTime = 0;
+    tadaSound.play().catch(e => console.warn("Sound play blocked", e));
+    hasCelebrated = true;
+}
+
+if (!hasActive && !hasCompleted && hasUsedTasks && !hasCelebrated) {
+    activeList.innerHTML = "<li class='empty-message'>You are all caught up! Well done! 🎉</li>";
+    celebrateCompletion();
+}
+
     // Show/hide headers and button
     activeHeader.style.display = hasActive ? "block" : "none";
     completedHeader.style.display = hasCompleted ? "block" : "none";
@@ -150,6 +223,7 @@ function renderTasks() {
 // Clear completed tasks
 function clearCompleted() {
     tasks = tasks.filter(task => !task.done);
+    saveTasks();
     renderTasks();
 }
 
@@ -163,11 +237,27 @@ renderTasks(); // ensures UI is clean on initial loads
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".input-group button").addEventListener("click", addTask);
     document.getElementById("clearButton").addEventListener("click", clearCompleted);
+    document.getElementById("resetAllButton").addEventListener("click", () => {
+        localStorage.clear();
+        localStorage.removeItem("hasUsedTasks");    // Prevent confetti on fresh list
+        tasks = [];
+        renderTasks();
+    });
 });
 
 document.getElementById("themeToggle").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     document.querySelector(".container").classList.toggle("dark-mode");
+
+    // Save the theme preference
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Trigger theme toggle icon animation
+    themeToggle.classList.add("animate");
+    setTimeout(() => {
+        themeToggle.classList.remove("animate");
+    }, 500);    // Match animation duration
 });
 
 document.getElementById("taskInput").addEventListener("keypress", (e) => {
