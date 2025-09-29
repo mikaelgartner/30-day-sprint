@@ -278,3 +278,38 @@ Next up: Day 9 — Refactoring with objects and adding deeper task logic!
 - 🧠 Reflected critically on browser vs JS validation and made an informed design choice
 
 ---
+
+# 🟧 Day 12: Things I’ve Learned & Accomplishments
+
+---
+
+### 📚 Key learnings
+
+- 🧠 How to use `localStorage` to persist data across sessions
+- 🔄 The difference between `JSON.stringify()` and `JSON.parse()` for storing and retrieving structured data
+- 🧱 How to reconstruct custom objects (like `Task`) from parsed JSON
+- 🎛️ How to manage state flags like `hasUsedTasks` and `hasCelebrated` to control app behavior
+- 🎨 How to combine logic and UX: triggering confetti and sound only once when the task list is cleared
+- 🌗 How to persist theme preferences using `localStorage` and toggle dark mode with animation
+
+---
+
+### 🛠️ What I Built
+
+- ✅ A fully functional to-do list with:
+  - Task creation, completion, and removal
+  - Timestamp tracking for both creation and completion
+  - Persistent storage using `localStorage`
+- 🎉 A celebration system that triggers confetti and sound when all tasks are completed
+- 🌙 A dark mode toggle with animated icon and theme persistence
+- 🧼 A reset button that clears all tasks and resets app state
+- 💬 Error handling and validation for empty task input
+
+---
+
+### 🚀 Milestone Unlocked
+
+> Day 12 is complete — and I’ve gone beyond the basics to build a polished, persistent, and joyful user experience.  
+> This isn’t just a checklist app — it’s a celebration engine.
+
+---
