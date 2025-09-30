@@ -313,3 +313,50 @@ Next up: Day 9 — Refactoring with objects and adding deeper task logic!
 > This isn’t just a checklist app — it’s a celebration engine.
 
 ---
+
+# 🟧 Day 13: JavaScript Challenges — Combat, Inventory & Shop Systems
+
+### 🎮 Achievements Unlocked
+
+- ✅ Built a **combat engine** with health tracking and dynamic logs
+- ✅ Created an **inventory system** with item pickup and terminal-style display
+- ✅ Developed a **shop mechanic** with credit deduction and item acquisition
+- ✅ Used arrays, objects, conditionals, and functions in real-world game logic
+- ✅ Practiced modular design and clean function architecture
+- ✅ Wrote expressive, readable code with cyberpunk flavor
+
+---
+
+### 🧠 Key Learnings
+
+- **State mutation**: Updating object properties like health and credits
+- **Array manipulation**: Using `.push()` and `.forEach()` to track items and display logs
+- **Function composition**: Writing reusable, single-responsibility functions
+- **Conditional logic**: Handling purchase validation and branching outcomes
+- **Object modeling**: Structuring player and item data for scalability
+
+---
+
+### 🧪 Challenges Completed
+
+1. `logCombatTurn()` — Combat log with health tracking
+2. `addItem()` — Inventory pickup system
+3. `showInventory()` — Terminal-style inventory display
+4. `buyItem()` — Shop purchase logic with credit check
+5. Bonus: Refactored `credits` handling using player object for clean state updates
+
+---
+
+### 🧩 Systems Built
+
+- 🧠 Combat Engine  
+- 📦 Inventory Tracker  
+- 🛒 Shop System  
+- 🧮 Credit Manager  
+- 🧾 Dynamic Log Formatter  
+
+---
+
+### 🚀 Momentum Status
+
+> Day 13 was a full success. I built modular gameplay systems, practiced core JavaScript logic, and reignited my sprint momentum. I’m ready for Day 14 and beyond.
