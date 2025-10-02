@@ -401,7 +401,7 @@ This module is now game-ready and could evolve into:
 ---
 
 
-# Day 15 summary: CSS Grid
+# 🟧 Day 15 summary: CSS Grid
 
 ## 📚 Learnings & Achievements
 
