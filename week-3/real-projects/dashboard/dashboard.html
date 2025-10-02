@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Responsive dashboard layout using CSS grid">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="dashboard">
+            <header>
+                <h1>🧠 Neural Command Console</h1>
+            </header>
+            <aside>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>🛰️ Uplink</li>
+                        <li>📁 Data Vault</li>
+                        <li>🧬 Augmentations</li>
+                        <li>🕵️‍♂️ Missions</li>
+                    </ul>
+                </nav>
+            </aside>
+            <main>
+                <div class="card-grid">
+                    <div class="card">🧠 Neural Sync<br><strong>92%</strong></div>
+                    <div class="card">💳 Cred Balance<br><strong>₡8,430</strong></div>
+                    <div class="card">📡 Signal Strength<br><strong>5.0 GHz</strong></div>
+                    <div class="card">🕵️‍♂️ Mission Triggers<br><strong>4 Active</strong></div>
+                </div>
+                <div class="terminal-ui">
+                    <nav class="tab-bar">
+                        <button class="tab active">Missions</button>
+                        <button class="tab">Stats</button>
+                        <button class="tab">Inventory</button>
+                    </nav>
+                    <section class="tab-content">
+                        <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
+                        <p>⚠️ Alert: Signal interference detected. Boost required.</p>
+                    </section>
+                </div>
+            </main>
+        </div>
+        <script>
+            const tabs = document.querySelectorAll(".tab");
+            const content = document.querySelector(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                   tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    if (tab.textContent === "Missions") {
+                        content.innerHTML = `
+                        <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
+                        <p>⚠️ Alert: Signal interference detected. Boost required.</p>
+                        `;
+                    } else if (tab.textContent === "Stats") {
+                        content.innerHTML = `
+                        <p>🧠 Neural Sync: 92%</p>
+                        <p>💳 Cred Balance: ₡8,430</p>
+                        `;
+                    } else if (tab.textContent === "Inventory") {
+                        content.innerHTML = `
+                        <p>🔫 Plasma Rifle</p>
+                        <p>🧬 Nano Medkit</p>
+                        `;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
