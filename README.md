@@ -400,3 +400,29 @@ This module is now game-ready and could evolve into:
 
 ---
 
+
+# Day 15 summary: CSS Grid
+
+## 📚 Learnings & Achievements
+
+- ✅ Mastered **CSS Grid** for complex layouts
+- ✅ Built a fully responsive **HUD-style dashboard**
+- ✅ Applied **modular design principles** for scalability
+- ✅ Implemented **neon glow effects** and animations
+- ✅ Used **JavaScript** to create dynamic tabbed content
+- ✅ Debugged layering and stacking contexts for visual polish
+- ✅ Explored **radial gradients** and pseudo-elements for immersive backgrounds
+
+---
+
+## 🧬 Next Steps
+
+- Add mission log component with dynamic entries
+- Animate tab transitions and mission alerts
+- Integrate sound effects or loading sequences
+- Modularize components for game engine integration (e.g. Phaser)
+
+---
+
+> Built with grit, glow, and grid power ⚡  
+> Part of the [30-Day Front-End Sprint](#) by Mikael
