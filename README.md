@@ -1,4 +1,4 @@
-# 🧑‍💻 Day 1: Semantic HTML Profile Page
+# 🟧 Day 1: Semantic HTML Profile Page
 
 Welcome to Day 1 of my 30-Day Front-End Developer Sprint! This project kicks off the challenge with a simple but meaningful milestone: building a personal profile page using semantic HTML.
 
@@ -51,7 +51,7 @@ Coming soon — stay tuned!
 ---
 Next up: **Day 3 — Flexbox Layouts!**
 
-# 🟥 Day 3: Layouts — Flexbox & Git Mastery
+# 🟧 Day 3: Layouts — Flexbox & Git Mastery
 
 Today’s Wins:
 - 🎨 Built a responsive card layout using Flexbox
@@ -67,7 +67,7 @@ Today wasn’t just about layout — it was a deep dive into real-world Git chal
 
 Feeling proud and ready for Day 4!
 
-# 🟥 Day 4: Responsive Design
+# 🟧 Day 4: Responsive Design
 
 Today I focused on making my Flexbox card layout responsive across different screen sizes. I used media queries to adapt the layout for mobile, tablet, and desktop views.
 Key updates:
@@ -81,7 +81,7 @@ Key updates:
 
 This was a deep dive into how Flexbox and media queries interact — and how combining flex-basis with percentage-based widths can give you precise control over layout across screen sizes.
 
-# 📅 Day 5: JavaScript Basics & Calculator Project
+# 🟧 Day 5: JavaScript Basics & Calculator Project
 
 ## What I Learned
 - JavaScript variables: `let`, `const`, `var`
@@ -105,7 +105,7 @@ This was a deep dive into how Flexbox and media queries interact — and how com
 - Add keyboard support
 - Add history log
 
-# 📅 Day 6: DOM Manipulation & History Log Upgrade
+# 🟧 Day 6: DOM Manipulation & History Log Upgrade
 
 ## 📚 What I Learned
 - DOM selection with `document.querySelector` and `getElementById`
@@ -250,7 +250,7 @@ Next up: Day 9 — Refactoring with objects and adding deeper task logic!
 
 
 
-# ✅ Day 11: Forms & Validation
+# 🟧 Day 11: Forms & Validation
 
 
 ### 📚 Key Learnings
@@ -427,7 +427,7 @@ This module is now game-ready and could evolve into:
 > Built with grit, glow, and grid power ⚡  
 > Part of the [30-Day Front-End Sprint](#) by Mikael
 
-# ✅ Day 16: Transitions & Animations — Summary
+# 🟧 Day 16: Transitions & Animations — Summary
 
 ### 🎯 Focus
 Enhance UI interactivity and polish using CSS transitions, animations, and JavaScript-driven effects.
