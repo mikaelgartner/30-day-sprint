@@ -37,39 +37,60 @@
                         <button class="tab">Inventory</button>
                     </nav>
                     <section class="tab-content">
-                        <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
-                        <p>⚠️ Alert: Signal interference detected. Boost required.</p>
+                        <button class="signal-boost">Boost Signal</button>
+                        <div class="tab-inner">
+                            <p id="signalBoost" style="display: none;">📡 Signal successfully boosted.</p>
+                            <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
+                            <p>⚠️ Alert: Signal interference detected. Boost required.</p>
+                        </div>
                     </section>
                 </div>
             </main>
         </div>
         <script>
             const tabs = document.querySelectorAll(".tab");
-            const content = document.querySelector(".tab-content");
+            const boostButton= document.querySelector(".signal-boost");
+            const inner = document.querySelector(".tab-inner");
+
+            boostButton.addEventListener("click", () => {
+                const signalMessage = document.getElementById("signalBoost");
+                signalMessage.style.display = "block";
+                console.log("Signal Boosted!");
+            });
 
             tabs.forEach(tab => {
                 tab.addEventListener("click", () => {
                    tabs.forEach(t => t.classList.remove("active"));
                     tab.classList.add("active");
 
+                    inner.classList.remove("fade");
+                    void inner.offsetWidth;   // Force reflow
+                    inner.classList.add("fade");
+                    
                     if (tab.textContent === "Missions") {
-                        content.innerHTML = `
+                        inner.innerHTML = `
+                        <p id="signalBoost" style="display: none;">📡 Signal successfully boosted.</p>
                         <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
                         <p>⚠️ Alert: Signal interference detected. Boost required.</p>
                         `;
                     } else if (tab.textContent === "Stats") {
-                        content.innerHTML = `
+                        inner.innerHTML = `
                         <p>🧠 Neural Sync: 92%</p>
                         <p>💳 Cred Balance: ₡8,430</p>
                         `;
                     } else if (tab.textContent === "Inventory") {
-                        content.innerHTML = `
+                        inner.innerHTML = `
                         <p>🔫 Plasma Rifle</p>
                         <p>🧬 Nano Medkit</p>
                         `;
                     }
                 });
             });
+
+            function boostSignal() {
+                console.log("Signal Boosted!");
+                document.getElementById("signalBoost").style.display = "block";
+            }
         </script>
     </body>
 </html>
