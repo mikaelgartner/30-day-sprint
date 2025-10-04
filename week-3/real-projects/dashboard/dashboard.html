@@ -27,7 +27,7 @@
                 <div class="card-grid">
                     <div class="card">🧠 Neural Sync<br><strong>92%</strong></div>
                     <div class="card">💳 Cred Balance<br><strong>₡8,430</strong></div>
-                    <div class="card">📡 Signal Strength<br><strong>5.0 GHz</strong></div>
+                    <div class="card" id="signalStrength">📡 Signal Strength<br><strong>5.0 GHz</strong></div>
                     <div class="card">🕵️‍♂️ Mission Triggers<br><strong>4 Active</strong></div>
                 </div>
                 <div class="terminal-ui">
@@ -54,7 +54,12 @@
 
             boostButton.addEventListener("click", () => {
                 const signalMessage = document.getElementById("signalBoost");
+                const signalStrength = document.getElementById("signalStrength");
+
                 signalMessage.style.display = "block";
+                signalStrength.innerHTML = "📡 Signal Strength<br><strong>9.99 GHz</strong>";
+                signalStrength.classList.add("boosted");
+
                 console.log("Signal Boosted!");
             });
 

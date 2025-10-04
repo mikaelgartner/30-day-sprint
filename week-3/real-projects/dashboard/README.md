@@ -34,7 +34,7 @@ To create a **game-ready dashboard UI** that showcases advanced layout technique
 
 ---
 
-# Day 15: CSS Grid
+# 🟨 Day 15: CSS Grid
 
 ## 📚 Learnings & Achievements
 
@@ -61,7 +61,7 @@ To create a **game-ready dashboard UI** that showcases advanced layout technique
 > Part of the [30-Day Front-End Sprint](#) by Mikael
 
 
-# ✅ Day 16: Transitions & Animations — Summary
+# 🟨 Day 16: Transitions & Animations — Summary
 
 ### 🎯 Focus
 Enhance UI interactivity and polish using CSS transitions, animations, and JavaScript-driven effects.
@@ -109,3 +109,25 @@ Enhance UI interactivity and polish using CSS transitions, animations, and JavaS
 ### 🚀 Next Up: Day 17 — CSS Variables & Theme Architecture
 
 Ready to refactor glow colors and build a scalable theme system using custom properties.
+
+# 🟨 Day 17: Learnings & Achievements
+
+### 📘 What I Learned
+- 🎨 How to define and use **CSS custom properties** (`--variable-name`) for colors, fonts, spacing, and transitions
+- 🧠 The power of scoping variables inside `:root` for global control across components
+- 🛠️ How to refactor existing styles to use variables for better maintainability and theme flexibility
+- 🌗 How to implement a **light/dark theme toggle** using CSS variables
+- 🔍 How to debug visual issues caused by overlapping layers (`body::before`) and gradients
+
+### 🚀 What I Built
+- 🧠 A fully themed **Neural Command Console dashboard** using CSS variables
+- 📡 An interactive **“Boost Signal” feature** that updates the signal strength dynamically
+- 💥 A glowing `.boosted` state with pulsing animation, scale transform, and neon border
+- ⚡ A visual effect that feels like the signal is overclocked and surging with energy
+
+### 🏁 Bonus Wins
+- 🧪 Experimented with animation timing (`0.0001s`) to simulate a critical overload flicker
+- 🔧 Used `!important` and `classList.add()` to override default styles and trigger visual upgrades
+- 🎯 Created a system that can be expanded with cooldowns, warnings, or toggles later
+
+> ✅ **Day 17 complete. Signal boosted. Dashboard alive.**
