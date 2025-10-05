@@ -131,3 +131,40 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - 🎯 Created a system that can be expanded with cooldowns, warnings, or toggles later
 
 > ✅ **Day 17 complete. Signal boosted. Dashboard alive.**
+
+
+## 🟨 Day 18: Accessibility Basics — Learnings & Achievements
+
+---
+
+### 🧠 What I Learned
+
+- 🔍 Accessibility is more than ARIA — it’s about inclusive design, structure, and empathy.
+- 🎯 ARIA roles and labels help screen readers interpret purpose and relationships.
+- ⌨️ Keyboard navigation is essential — `tabindex`, focus styles, and skip links matter.
+- 🗣️ Screen readers rely on system language, voice settings, and semantic markup.
+- 🧪 Lighthouse audits reveal hidden accessibility issues and quantify progress.
+- 🎧 Auditory clarity is a real challenge — especially with mismatched language settings.
+
+---
+
+### 🏆 What I Achieved
+
+- ✅ Implemented ARIA roles: `tab`, `tablist`, `tabpanel`, `status`, `complementary`, `banner`
+- ✅ Enabled full keyboard navigation with `tabindex="0"` and visible neon focus styles
+- ✅ Added a skip link for fast navigation to main content
+- ✅ Used `aria-live="polite"` for non-disruptive dynamic updates
+- ✅ Ran a Lighthouse audit and scored **94/100** in Accessibility
+- ✅ Tested with NVDA screen reader and confirmed tab flow and announcements
+- ✅ Reflected on real-world usability for users with auditory impairments
+- ✅ Styled accessibility features to match the dashboard’s cyberpunk theme
+
+---
+
+### 🌟 Bonus Wins
+
+- 💡 Thought critically about screen reader pronunciation and language mismatches
+- 🧘 Recognized cognitive load and designed with empathy
+- 🧠 Internalized accessibility as a mindset, not just a checklist
+
+---

@@ -33,6 +33,21 @@ body {
   background: var(--bg-gradient);
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bg-black);
+  color: var(--neon-yellow);
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .dashboard {
     position: relative;
     z-index: 0;
@@ -79,23 +94,33 @@ aside {
     margin: 0;
 }
 
-.sidebar-nav li {
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  background-color: var(--bg-black);
-  border: 1px solid var(--neon-yellow);
-  border-radius: 8px;
-  color: var(--neon-yellow);
-  font-family: var(--font-primary);
-  cursor: pointer;
-  transition: var(--transition-fast);
-  box-shadow: 0 0 5px var(--neon-yellow);
+.sidebar-item {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    background-color: var(--bg-black);
+    border: 1px solid var(--neon-yellow);
+    border-radius: 8px;
+    color: var(--neon-yellow);
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: 0 0 5px var(--neon-yellow);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
 }
 
-.sidebar-nav li:hover {
+.sidebar-item:hover {
     background-color: var(--neon-yellow);
     color: var(--bg-black);
     box-shadow: 0 0 10px var(--neon-yellow);
+}
+
+.card:focus,
+.sidebar-item:focus {
+    outline: 2px solid var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow);
 }
 
 main {

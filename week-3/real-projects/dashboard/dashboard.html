@@ -9,36 +9,45 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
         <div class="dashboard">
-            <header>
+            <header role="banner">
                 <h1>🧠 Neural Command Console</h1>
             </header>
-            <aside>
-                <nav class="sidebar-nav">
+            <aside role="complementary">
+                <nav class="sidebar-nav" aria-label="Main Navigation">
                     <ul>
-                        <li>🛰️ Uplink</li>
-                        <li>📁 Data Vault</li>
-                        <li>🧬 Augmentations</li>
-                        <li>🕵️‍♂️ Missions</li>
+                        <li>
+                            <button class="sidebar-item" aria-label="Uplink" aria-disabled="true">🛰️ Uplink</button>
+                        </li>
+                        <li>
+                            <button class="sidebar-item" aria-label="Data Vault" aria-disabled="true">📁 Data Vault</button>
+                        </li>
+                        <li>
+                            <button class="sidebar-item" aria-label="Augmentation" aria-disabled="true">🧬 Augmentations</button>
+                        </li>
+                        <li>
+                            <button class="sidebar-item" aria-label="Missions" aria-disabled="true">🕵️‍♂️ Missions</button>
+                        </li>
                     </ul>
                 </nav>
             </aside>
-            <main>
+            <main id="main" role="main">
                 <div class="card-grid">
-                    <div class="card">🧠 Neural Sync<br><strong>92%</strong></div>
-                    <div class="card">💳 Cred Balance<br><strong>₡8,430</strong></div>
-                    <div class="card" id="signalStrength">📡 Signal Strength<br><strong>5.0 GHz</strong></div>
-                    <div class="card">🕵️‍♂️ Mission Triggers<br><strong>4 Active</strong></div>
+                    <div class="card" role="group" tabindex="0" aria-label="Neural Sync">🧠 Neural Sync<br><strong>92%</strong></div>
+                    <div class="card" role="group" tabindex="0" aria-label="Credits Balance">💳 Cred Balance<br><strong>₡8,430</strong></div>
+                    <div class="card" role="group" tabindex="0" aria-label="Signal Strength" id="signalStrength">📡 Signal Strength<br><strong>5.0 GHz</strong></div>
+                    <div class="card" role="group" tabindex="0" aria-label="Mission Triggers">🕵️‍♂️ Mission Triggers<br><strong>4 Active</strong></div>
                 </div>
                 <div class="terminal-ui">
-                    <nav class="tab-bar">
-                        <button class="tab active">Missions</button>
-                        <button class="tab">Stats</button>
-                        <button class="tab">Inventory</button>
+                    <nav class="tab-bar" role="tablist">
+                        <button class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="missions-panel" id="missions-tab">Missions</button>
+                        <button class="tab" role="tab" tabindex="0" aria-controls="stats-panel" id="stats-tab">Stats</button>
+                        <button class="tab" role="tab" tabindex="0" aria-controls="inventory-panel" id="inventory-tab">Inventory</button>
                     </nav>
-                    <section class="tab-content">
-                        <button class="signal-boost">Boost Signal</button>
-                        <div class="tab-inner">
+                    <section class="tab-content" role="tabpanel" aria-labelledby="missions-tab" id="missions-panel">
+                        <button class="signal-boost" aria-label="Boost Signal Strength">Boost Signal</button>
+                        <div class="tab-inner" role="status" aria-live="polite">
                             <p id="signalBoost" style="display: none;">📡 Signal successfully boosted.</p>
                             <p>🧾 Incoming mission: “Intercept the rogue signal in Sector 7.”</p>
                             <p>⚠️ Alert: Signal interference detected. Boost required.</p>
@@ -65,8 +74,17 @@
 
             tabs.forEach(tab => {
                 tab.addEventListener("click", () => {
-                   tabs.forEach(t => t.classList.remove("active"));
+                   tabs.forEach(t => {
+                    t.classList.remove("active");
+                    t.setAttribute("aria-selected", "false");
+                    });
+
                     tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
+
+                    const panel = document.querySelector(".tab-content");
+                    panel.setAttribute("aria-labelledby", tab.id);
+                    panel.setAttribute("id", tab.getAttribute("aria-controls"));       
 
                     inner.classList.remove("fade");
                     void inner.offsetWidth;   // Force reflow
