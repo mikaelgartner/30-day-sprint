@@ -133,7 +133,7 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 > ✅ **Day 17 complete. Signal boosted. Dashboard alive.**
 
 
-## 🟨 Day 18: Accessibility Basics — Learnings & Achievements
+# 🟨 Day 18: Accessibility Basics — Learnings & Achievements
 
 ---
 
