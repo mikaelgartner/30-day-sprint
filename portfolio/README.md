@@ -25,7 +25,7 @@
 
 ---
 
-## 🧠 Day 19 Learnings & Achievements
+# 🧠 Day 19 Learnings & Achievements
 
 - 🧩 Sketched wireframe and defined layout structure for portfolio site
 - 🎨 Selected a clean, professional color palette and font pairing
