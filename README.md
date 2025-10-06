@@ -534,3 +534,22 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - 🧠 Internalized accessibility as a mindset, not just a checklist
 
 ---
+
+# 🧠 Day 19 Portfolio Planning and Execution: Learnings & Achievements
+
+- 🧩 Sketched wireframe and defined layout structure for portfolio site
+- 🎨 Selected a clean, professional color palette and font pairing
+- 🔗 Linked Google Fonts and scoped CSS variables in `style.css`
+- 🧾 Created `README.md` to track sprint learnings and achievements
+- 🧠 Reflected on design tone and adjusted visual theme to suit professional goals
+- 🧱 Scaffolded `index.html` with semantic structure and planned section content
+- ✅ Prepared for build phase with organized folder and planning notes
+
+---
+
+## 📌 Sprint Status  
+- ✅ Wireframe sketched and saved  
+- ✅ HTML scaffold complete  
+- ✅ Fonts and color scheme chosen and scoped  
+- ✅ Planning notes and `README.md` created  
+- 🔜 Ready to begin build phase on **Day 20**
