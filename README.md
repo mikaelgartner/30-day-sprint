@@ -555,7 +555,7 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - 🔜 Ready to begin build phase on **Day 20**
 
 
-# ✨ Day 20: Portfolio Execution: Learning & Achievements
+# ✨ Day 20: Portfolio Execution: Learnings & Achievements
 
 ## 🧠 What I Learned
 - 🧩 How to structure a professional homepage using semantic HTML (`<header>`, `<section>`, `<footer>`)
