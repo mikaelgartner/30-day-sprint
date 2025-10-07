@@ -21,7 +21,97 @@ body {
 
 h1, h2, h3 {
     font-family: var(--font-heading);
+    text-align: center;
 }
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section {
+    padding: 60px 20px;
+    border-top: 2px solid var(--border-color);
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li::before {
+    content: "✔️";
+    margin-right: 8px;
+    color: var(--accent-secondary);
+}
+
+.project-card {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 10px;
+    min-height: 150px;
+    text-align: center;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: white;
+    color: var(--text-main);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 2px rgba(0, 169, 157, 0.2);
+}
+
 
 code {
     font-family: var(--font-code);
@@ -40,4 +130,12 @@ code {
 
 .cta-button:hover {
     background-color: var(--accent-primary);
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: -8px;
+    margin-bottom: 8px;
+    display: block;
 }

@@ -37,11 +37,31 @@
         </section>
 
         <section id="projects">
-            <div class="project-card"></div>
-            <div class="project-card"></div>
-            <div class="project-card"></div>
-            <div class="project-card"></div>
-            <div class="project-card"></div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of what the project does or what you learned</p>
+                <img src="placeholder.png" alt="Screenshot of project">
+            </div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of what the project does or what you learned</p>
+                <img src="placeholder.png" alt="Screenshot of project">
+            </div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of what the project does or what you learned</p>
+                <img src="placeholder.png" alt="Screenshot of project">
+            </div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of what the project does or what you learned</p>
+                <img src="placeholder.png" alt="Screenshot of project">
+            </div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of what the project does or what you learned</p>
+                <img src="placeholder.png" alt="Screenshot of project">
+            </div>
         </section>
 
         <section id="contact">
@@ -50,7 +70,62 @@
                 <a href=".....">LinkedIn</a>
                 <a href=".....">Github</a>
             </div>
-            <form class="contact-form"></form>
+            <form class="contact-form" id="contactForm" novalidate>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+                <span class="error-message" id="emailError"></span>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <span class="error-message" id="messageError"></span>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
         </section>
+        <script>
+            const form = document.getElementById("contactForm");
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+
+            form.addEventListener("submit", function(e) {
+                let valid = true;
+
+                // Clear previous errors
+                document.getElementById("nameError").textContent = "";
+                document.getElementById("emailError").textContent = "";
+                document.getElementById("messageError").textContent = "";
+
+                // Name validation
+                if (nameInput.value.trim() === "") {
+                    document.getElementById("nameError").textContent = "Please enter your name.";
+                    valid = false;
+                }
+
+                // Email validation
+                if (!emailInput.value.includes('@')) {
+                    document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                    valid = false;
+                }
+
+                // Message validation
+                if (messageInput.value.trim().length < 10) {
+                    document.getElementById("messageError").textContent = "Message must be at least 10 characters.";
+                    valid = false;
+                }
+
+                if (valid) {
+                    alert("Thanks for reaching out, Mikael will get back to you soon!");
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        </script>
     </body>
 </html>

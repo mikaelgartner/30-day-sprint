@@ -43,3 +43,27 @@
 - ✅ Fonts and color scheme chosen and scoped  
 - ✅ Planning notes and `README.md` created  
 - 🔜 Ready to begin build phase on **Day 20**
+
+
+# ✨ Day 20: Learning & Achievements
+
+## 🧠 What I Learned
+- 🧩 How to structure a professional homepage using semantic HTML (`<header>`, `<section>`, `<footer>`)
+- 🎨 How to apply scoped CSS variables for consistent color, typography, and spacing
+- 📐 How to use Flexbox to center and align content in the hero section
+- 🧱 How to build and style reusable components like `.project-card` and `.cta-button`
+- 📝 How to create and validate a contact form using HTML5 and JavaScript
+- 🚨 How to display custom error messages and success alerts for form submissions
+
+## 🛠️ What I Built
+- 🏠 A fully scaffolded homepage with sections for Hero, About, Projects, and Contact
+- 💡 Styled header and hero section with responsive layout and call-to-action button
+- 📦 Project cards with titles, descriptions, and placeholder images
+- 📬 A contact form with labeled input fields, styled layout, and client-side validation
+- ✅ Error handling and feedback using JavaScript and accessible markup
+
+## 🚀 Bonus Wins
+- 🔍 Used semantic tags and scoped styles for clean, maintainable code  
+- 📧 Added a regex pattern for email validation  
+- 🎉 Included a success alert to confirm form submission  
+- 🧑‍💻 Maintained consistent design language across all sections
