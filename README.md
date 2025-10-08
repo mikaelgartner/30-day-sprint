@@ -580,7 +580,7 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 
 ---
 
-# 🟨 Day 21: Build Day 2 — Learnings & Achievements
+# 🟨 Day 21: Portfolio Build Day 2 — Learnings & Achievements
 
 ## 🚀 What I Built
 - 🧱 Added **About**, **Projects**, and **Contact** sections to my portfolio page
