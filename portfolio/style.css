@@ -70,6 +70,21 @@ section {
     margin-bottom: 20px;
 }
 
+.project-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.project-card li::before {
+    content: "✔️";
+    color: var(--accent-secondary);
+    margin-right: 8px;
+}
+
 .project-card img {
     width: 100%;
     border-radius: 6px;
@@ -138,4 +153,31 @@ code {
     margin-top: -8px;
     margin-bottom: 8px;
     display: block;
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    padding: 16px;
+  }
+
+  .project-card img {
+    height: auto;
+    max-height: 200px;
+  }
+
+  section {
+    padding: 40px 16px;
+  }
+
+  .contact-form {
+    padding: 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+  }
 }

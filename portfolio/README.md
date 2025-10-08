@@ -67,3 +67,31 @@
 - 📧 Added a regex pattern for email validation  
 - 🎉 Included a success alert to confirm form submission  
 - 🧑‍💻 Maintained consistent design language across all sections
+
+
+# 🟨 Day 21: Build Day 2 — Learnings & Achievements
+
+## 🚀 What I Built
+- 🧱 Added **About**, **Projects**, and **Contact** sections to my portfolio page
+- 🎨 Styled each section with a consistent theme using CSS variables and semantic structure
+- 📱 Made the layout **responsive** with media queries for mobile and tablet views
+- 📸 Included screenshots and alt text for each project to enhance accessibility
+- 🔗 Linked to GitHub, LinkedIn, and Email for easy contact
+
+---
+
+## 🧠 What I Learned
+- ✅ How to structure a multi-section portfolio using semantic HTML
+- 🎯 How to apply consistent styling across components using CSS variables
+- 📐 How to scope responsive styles properly inside media queries
+- 🧪 How to test layout across screen sizes and refine spacing for mobile
+- 🧵 How to maintain design cohesion across About, Projects, and Contact sections
+
+---
+
+## 🏆 Achievements Unlocked
+- 🌟 Built a fully responsive and interactive portfolio page
+- 🔍 Passed accessibility checks with descriptive alt text and ARIA labels
+- 💬 Created a contact form with real-time validation and custom alert messaging
+- 📁 Organized code and assets cleanly for future updates
+- 🚢 Ready to push final version to GitHub and write a polished `README.md`
