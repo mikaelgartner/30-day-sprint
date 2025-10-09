@@ -95,3 +95,76 @@
 - 💬 Created a contact form with real-time validation and custom alert messaging
 - 📁 Organized code and assets cleanly for future updates
 - 🚢 Ready to push final version to GitHub and write a polished `README.md`
+
+---
+
+# 🟩 Day 22: Learnings & Achievements — Portfolio Polish
+
+### ✅ Achievements
+- Refined layout and design for visual consistency across all sections
+- Implemented smooth animations and transitions for interactive polish
+- Verified full responsiveness across desktop, tablet, and mobile devices
+- Added favicon and comprehensive meta tags for SEO and social sharing
+- Finalized a professional `README.md` with tech stack, features, setup instructions, and author credit
+- Prepared for GitHub deployment with all assets and polish complete
+
+### 🧠 Learnings
+- How to use CSS transitions and keyframes to enhance user experience
+- Importance of semantic structure and accessibility in portfolio presentation
+- How meta tags and Open Graph properties improve discoverability and link previews
+- Best practices for writing a clear, informative `README.md` that reflects your skills and personality
+- How to audit and polish a project with a critical eye for detail and consistency
+
+---
+
+# 📁 Mikael Gärtner | Web & Mobile Developer Portfolio
+
+Explore a thoughtfully crafted portfolio showcasing responsive web and mobile projects, intuitive UI/UX, and clean, semantic code.
+
+---
+
+## 🚀 Live Site
+
+[Visit the Portfolio](https://yourdomain.com/)  
+*Replace with your actual GitHub Pages or deployment link*
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5** — semantic structure, accessibility
+- **CSS3** — Flexbox, Grid, media queries, animations
+- **JavaScript** — DOM manipulation, events, local storage
+- **Git & GitHub** — version control and deployment
+
+---
+
+## ✨ Features
+
+- Responsive layout across desktop, tablet, and mobile
+- Smooth animations and transitions for polish
+- SEO-optimized meta tags and social sharing previews
+- Accessible markup with ARIA labels and keyboard navigation
+- Clean, modular code structure
+
+---
+
+## 📸 Screenshots
+
+*Optional: Add screenshots of your portfolio sections here*
+
+---
+
+## 📦 Setup Instructions
+
+1. Clone the repo:  
+   `git clone https://github.com/yourusername/portfolio`
+2. Open `index.html` in your browser
+3. Customize content and styles as needed
+
+---
+
+## 👤 Author
+
+**Mikael Gärtner**  
+Frontend & Mobile Developer focused on crafting intuitive, user-centered experiences.

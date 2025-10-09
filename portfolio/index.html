@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Character encoding -->
         <meta charset="UTF-8">
+
+        <!-- Responsive design -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Page title -->
         <title>Portfolio Page For Mikael Gärtner</title>
+
+        <!-- SEO -->
+        <meta name="description" content="Explore Mikael Gärtner’s portfolio — showcasing responsive web and mobile projects, intuitive UI/UX, and thoughtful development.">
+        <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript">
+        <meta name="author" content="Mikael Gärtner">
+
+        <!-- Open Graph (Facebook, LinkedIn) -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Mikael Gärtner | Web & Mobile Developer Portfolio">
+        <meta property="og:description" content="Explore Mikael Gärtner’s portfolio — showcasing responsive web and mobile projects, intuitive UI/UX, and thoughtful development.">
+        <meta property="og:image" content="https://yourdomain.com/preview.png">
+        <meta property="og:url" content="https://yourdomain.com/">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Mikael Gärtner | Web & Mobile Developer Portfolio">
+        <meta name="twitter:description" content="Explore Mikael Gärtner’s portfolio — showcasing responsive web and mobile projects, intuitive UI/UX, and thoughtful development.">
+        <meta name="twitter:image" content="https://yourdomain.com/preview.png">
+        <meta name="twitter:url" content="https://yourdomain.com/">
+
+        <!-- Fonts and Styles -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&family=Fira+Code&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.png" type="image/png">
     </head>
     <body>
         <header id="hero">
             <h1>Mikael</h1>
-            <p>Web and Mobile App Developer crafting thoughtful and memorable user experiences</p>
+            <p id="heroP">Web and Mobile App Developer crafting thoughtful and memorable user experiences</p>
             <a href="#projects" class="cta-button">View Projects</a>
         </header>
 
@@ -195,6 +224,13 @@
                     e.preventDefault();
                 }
             });
+
+                document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll("#hero, #about, #projects, #contact").forEach((el, index) => {
+                el.classList.add("fade-in");
+                el.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
         </script>
     </body>
 </html>

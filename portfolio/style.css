@@ -33,14 +33,25 @@ h1, h2, h3 {
     text-align: center;
 }
 
+#hero p {
+    margin-bottom: 50px;
+}
+
 section {
     padding: 60px 20px;
     border-top: 2px solid var(--border-color);
 }
 
+.bio,
+.skills {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 .skills ul {
-    list-style: none;
-    padding: 0;
+    display: inline-block;
+    text-align: left;
 }
 
 .skills li::before {
@@ -57,6 +68,12 @@ section {
     margin: 10px;
     min-height: 150px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .project-card h3 {
@@ -154,6 +171,24 @@ code {
     margin-bottom: 8px;
     display: block;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) 
+    }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
 
 @media (max-width: 600px) {
   .project-card {
