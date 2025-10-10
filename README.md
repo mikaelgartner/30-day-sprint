@@ -625,3 +625,46 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - How meta tags and Open Graph properties improve discoverability and link previews
 - Best practices for writing a clear, informative `README.md` that reflects your skills and personality
 - How to audit and polish a project with a critical eye for detail and consistency
+
+---
+
+# 📦 Day 23: Git & Deployment — Learnings & Achievements
+
+- 🚀 Deployed the portfolio using GitHub Pages and verified live functionality  
+- 🧪 Ran a full Lighthouse audit and diagnosed contrast issues  
+- 🎨 Refactored CSS variables for improved contrast and readability  
+- 💯 Achieved a perfect **100/100** score across all Lighthouse categories:  
+  - ⚡ Performance  
+  - ♿ Accessibility  
+  - ✅ Best Practices  
+  - 🔍 SEO  
+- 🧼 Maintained clean Git workflow with structured commits  
+- 🧠 Demonstrated strong debugging, testing, and iterative refinement skills  
+- 💡 Showed thoughtful design thinking and empathy for user experience
+
+---
+
+## 🚀 Live Site
+
+[Visit the Portfolio](https://mikaelgartner.github.io/portfolio/)
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5** — semantic structure, accessibility
+- **CSS3** — Flexbox, Grid, media queries, animations
+- **JavaScript** — DOM manipulation, events, local storage
+- **Git & GitHub** — version control and deployment
+
+---
+
+## ✨ Features
+
+- Responsive layout across desktop, tablet, and mobile
+- Smooth animations and transitions for polish
+- SEO-optimized meta tags and social sharing previews
+- Accessible markup with ARIA labels and keyboard navigation
+- Clean, modular code structure
+
+---
