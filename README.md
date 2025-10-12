@@ -696,4 +696,33 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 ## 🚀 Next Steps (Optional)
 - Add favorites with `localStorage`  
 - Create a book detail view with subjects and description  
-- Add a “Book of the Day” feature  
+- Add a “Book of the Day” feature
+
+---
+
+# ✅ Day 25: Learnings & Achievements — Final Project Planning
+
+---
+
+### 🎯 Focus of the Day
+**Strategic planning and wireframing for BookBuddy**, your final project. Today was all about laying a solid foundation before diving into code.
+
+---
+
+### 🧠 Key Learnings
+- **Modal vs Page Navigation**: Learned why modals are ideal for quick detail views without disrupting user flow.
+- **Header Layout Best Practices**: Explored horizontal nav alignment for a modern, space-efficient design.
+- **Modal Sizing & UX**: Understood how modal dimensions affect usability and how to design within realistic constraints.
+- **Wireframing with Purpose**: Practiced translating layout ideas into visual sketches that guide implementation.
+
+---
+
+### 🛠️ Achievements
+- 🗂️ Created a clean folder structure for BookBuddy
+- 🔄 Migrated previous project files into the new setup
+- ✏️ Sketched homepage wireframe with updated header layout
+- 🧩 Designed Book Detail Modal with thoughtful content hierarchy
+- 💬 Iterated layout decisions through discussion and visual reasoning
+- 📋 Documented next steps and feature roadmap
+
+---
