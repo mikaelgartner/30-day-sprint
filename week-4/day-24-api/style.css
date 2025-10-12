@@ -57,7 +57,7 @@ button {
 
 .book-card:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 10px orange;
+    box-shadow: 0 4px 10px darkgoldenrod;
     transition: all 0.3s ease;
 }
 
