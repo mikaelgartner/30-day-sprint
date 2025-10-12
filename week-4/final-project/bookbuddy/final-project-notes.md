@@ -51,7 +51,7 @@ BookBuddy is evolving from a simple book search tool into a full-featured, respo
 
 ---
 
-## ✅ Day 25: Learnings & Achievements — Final Project Planning
+# ✅ Day 25: Learnings & Achievements — Final Project Planning
 
 ---
 
