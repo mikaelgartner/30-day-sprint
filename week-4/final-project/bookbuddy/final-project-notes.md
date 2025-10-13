@@ -78,12 +78,31 @@ BookBuddy is evolving from a simple book search tool into a full-featured, respo
 
 ---
 
-### 🚀 Momentum for Day 26
-You're now ready to:
-- Start coding the homepage layout
-- Build and style the Book Detail Modal
-- Wire up interactivity with JavaScript
-- Begin implementing favorites and filters
+## 📅 Day 26 Progress – BookBuddy Final Project
+
+### ✅ Features Completed
+- Implemented `fetchBooksOfTheDay()` using Open Library subject endpoint
+- Implemented `fetchTopRatedBooks()` with dynamic rendering
+- Built reusable book card component with cover, title, author, and publish year
+- Created book detail modal with dynamic content injection
+- Structured modal layout using Flexbox for side-by-side image and metadata
+- Standardized metadata formatting for title, author, and publish year
+
+### 🐛 Bugs Fixed
+- Corrected `.modal.hidden` class mismatch
+- Fixed malformed `<img>` tag in modal
+- Resolved layout wrapping issue by restructuring modal HTML
+
+### 🧠 Technical Notes
+- Used `book.cover_i || book.cover_id` to support multiple data formats
+- Escaped JSON safely for inline `onclick` handlers
+- Structured modal HTML with sibling `<img>` and `.modal-body` for Flexbox alignment
+
+### 🔜 Next Steps
+- Fetch subjects and description from `/works/{id}.json`
+- Refactor inline `onclick` to use `addEventListener`
+- Implement favorites with `localStorage`
+- Add accessibility features (ARIA roles, keyboard navigation)
 
 ---
 

@@ -3,21 +3,65 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BookBuddy - Book Search</title>
+        <title>BookBuddy</title>
         <link rel="stylesheet" href="style.css">
-        <script src="api.js" defer></script>
+        <script src="app.js" defer></script>
     </head>
     <body>
+        <header>
+            <h1>BookBuddy</h1>
+            <p>Your personal book assistant</p>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="bookshelf.html">My Bookshelf</a>
+                <a href="about.html">About</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+        </header>
+
         <main>
+            <!-- Search Bar Section -->
             <section>
-                <h1>BookBuddy: Book Search</h1>
                 <h2>Search for Books</h2>
                     <div class="search-bar">
                         <input type="text" class="search-input" id="search" placeholder="Search for a Book">
                         <button onclick="searchBooks()">Search</button>
                     </div>
-                    <div id="results" class="results-container"></div>
+            </section>
+
+            <!-- Results Grid Section -->
+            <section>
+                <h2>Search Results</h2>
+                <div id="results" class="results-container"></div>
+            </section>
+
+            <!-- Featured Books of the Day section -->
+            <section>
+                <h2>Books of the Day</h2>
+                <div id="books-of-the-day" class="book-collection"></div>
+            </section>
+
+            <!-- 10 Top Rated Books -->
+            <section aria-labelledby="top-rated-heading">
+                <h2 id="top-rated-heading">⭐  Top Rated Books  ⭐</h2>
+                <div id="top-rated-books" class="book-collection">
+                    <!-- Example Book Card -->
+                    <div class="book-card"></div>
+                </div>
             </section>
         </main>
+        <footer>
+            <p>&copy; BookBuddy all rights reserved 2025</p>
+        </footer>
+
+        <!-- Book Detail Modal -->
+            <div id="book-modal" class="modal hidden">
+                <div class="modal-content">
+                    <img id="modal-cover" src="" alt="Book cover">
+                    <div id="modal-body" class="modal-body"></div>
+                    <span class="close-button">&times;</span>
+                </div>
+            </div>
     </body>
 </html>
+
