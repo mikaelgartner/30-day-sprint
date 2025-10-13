@@ -726,3 +726,29 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - 📋 Documented next steps and feature roadmap
 
 ---
+
+
+# ✅ Day 26: Learnings & Achievements – Feature Expansion & Modal System
+
+## 🔍 What I Built
+- Implemented `fetchBooksOfTheDay()` and `fetchTopRatedBooks()` using Open Library subject endpoints  
+- Rendered dynamic book cards with cover, title, author, and publish year  
+- Created a responsive book detail modal with dynamic content injection  
+- Structured modal layout using Flexbox for side-by-side image and metadata
+
+## 🧠 What I Learned
+- How to parse Open Library’s subject-based data and handle missing fields  
+- How to safely escape JSON for inline `onclick` handlers  
+- How to structure modal HTML for clean Flexbox alignment  
+- How to standardize metadata display using consistent paragraph formatting
+
+## 🎨 Styling Highlights
+- Side-by-side modal layout with image and metadata  
+- Responsive modal design with fallback for small screens  
+- Unified metadata styling using `<p><strong>Label:</strong> Value</p>` format
+
+## 🚀 Next Steps
+- Add subjects and descriptions from `/works/{id}.json`  
+- Refactor inline `onclick` to use `addEventListener`  
+- Implement favorites with `localStorage`  
+- Add accessibility features (ARIA roles, keyboard navigation)
