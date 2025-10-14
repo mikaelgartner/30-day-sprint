@@ -752,3 +752,30 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Refactor inline `onclick` to use `addEventListener`  
 - Implement favorites with `localStorage`  
 - Add accessibility features (ARIA roles, keyboard navigation)
+
+---
+
+# ✅ Day 27: Learnings & Achievements – UX Feedback & Favorites System
+
+## 🔍 What I Built
+- Filtered `localStorage` keys to only show saved books (`/works/`)
+- Added visual feedback to “Add to Favorites” button using `.saved` class
+- Implemented floating toast notifications for saving and removing favorites
+- Anchored toast inside modal and bookshelf for focused UX
+- Refactored `removeFavorite()` to delay reload and show toast
+
+## 🧠 What I Learned
+- How to filter `localStorage` keys for scoped data
+- How to style buttons dynamically with class toggling
+- How to create reusable toast notifications with fade-in/out
+- How to anchor feedback elements near user focus for better UX
+
+## 🎨 Styling Highlights
+- `.saved` button class with green background and white text
+- Toast positioned inside modal and bookshelf with smooth transitions
+- Unified toast styling for save/remove actions
+
+## 🚀 Next Steps
+- Add “Clear All Favorites” button
+- Consider search/filter options for bookshelf
+- Final polish: animations, accessibility, responsiveness
