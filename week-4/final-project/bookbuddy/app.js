@@ -139,7 +139,7 @@ async function fetchTopRatedBooks() {
   }
 }
 
-function showBookModal(book) {
+async function showBookModal(book) {
   const modal = document.getElementById("book-modal");
   const modalBody = document.getElementById("modal-body");
   const modalCover = document.getElementById("modal-cover");
@@ -148,6 +148,8 @@ function showBookModal(book) {
   const author = book.authors?.[0]?.name || book.author_name?.join(", ") || "Unknown author";
   const year = book.first_publish_year || "N/A";
   const coverId = book.cover_i || book.cover_id;
+  const workKey = book.key || book.work_key?.[0];
+
 
   if (coverId) {
     modalCover.src = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
@@ -157,11 +159,75 @@ function showBookModal(book) {
     modalCover.style.display = "none";
   }
 
-  modalBody.innerHTML = `
-    <p><strong>Title:</strong> ${title}</p>
-    <p><strong>Author:</strong> ${author}</p>
-    <p><strong>First published:</strong> ${year}</p>
-  `;
+  // Fetch extra details from /works/ endpoint
+  let subjects = "N/A";
+  let description = "No description available.";
+  let authorBio = "No author bio available.";
+
+  if (workKey) {
+    try {
+      const res = await fetch(`https://openlibrary.org${workKey}.json`);
+      const data = await res.json();
+
+      subjects = data.subjects?.slice(0, 5).join(", ") || "N/A";
+      description = typeof data.description === "string" 
+      ? data.description
+      : data.description?.value || description;
+    } catch (error) {
+      console.log("Error fetching additional book details.", error);
+    }
+  }
+
+  // Injecting modal content dynamically through return statement
+ modalBody.innerHTML = `
+  <p><strong>Title:</strong> ${title}</p>
+  <p><strong>Author:</strong> ${author}</p>
+  <p><strong>First published:</strong> ${year}</p>
+  <p><strong>Subjects:</strong> ${subjects}</p>
+`;
+
+document.querySelector(".modal-description").innerHTML = `
+  <h3>Description:</h3>
+  <p>${description}</p>
+  ${authorBio ? `
+    <div class="modal-author-bio">
+      <h3>About the author</h3>
+      <p>${authorBio}</p>
+    </div>
+  ` : ""}
+`;
+
+  // Add button listeners
+  document.getElementById("add-to-favorites").onclick = () => {
+    showToast();
+    console.log("Add to Favorites clicked");
+
+  const key = workKey || book.title?.replace(/\s+/g, "_") || `book_${Date.now()}`;
+  if (!key) {
+    console.warn("No valid key found. Cannot save to favorites.");
+    return;
+  }
+
+  console.log("Final key used:", key);
+  console.log("Book saved:", JSON.stringify(book));
+
+  localStorage.setItem(key, JSON.stringify(book));
+
+  const favButton = document.getElementById("add-to-favorites");
+  favButton.textContent = "Added to Bookshelf";
+  favButton.disabled = true;
+  favButton.classList.add("saved");
+
+  setTimeout(() => {
+    favButton.textContent = "Add To Favorites";
+    favButton.disabled = false;
+    favButton.classList.remove("saved");
+  }, 2000);
+};
+
+  document.getElementById("more-info").onclick = () => {
+    window.open(`https://openlibrary.org${workKey}`, "_blank");
+  };
 
   modal.classList.remove("hidden");
 }
@@ -176,6 +242,18 @@ window.addEventListener("click", (e) => {
     modal.classList.add("hidden");
   }
 });
+
+function showToast(message = "Book was successfully added to Bookshelf ✅") {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.classList.add("hidden");
+  }, 2000);
+}
 
 // Fetch Books of the Day on page load
 fetchBooksOfTheDay();

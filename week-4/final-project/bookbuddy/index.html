@@ -57,9 +57,20 @@
         <!-- Book Detail Modal -->
             <div id="book-modal" class="modal hidden">
                 <div class="modal-content">
-                    <img id="modal-cover" src="" alt="Book cover">
-                    <div id="modal-body" class="modal-body"></div>
                     <span class="close-button">&times;</span>
+
+                    <div class="modal-top">
+                        <img id="modal-cover" src="" alt="Book cover">
+                        <div id="modal-body" class="modal-body"></div>
+                    </div>
+
+                    <div class="modal-description"></div>
+
+                    <div class="modal-footer">
+                        <button id="add-to-favorites">Add to Favorites</button>
+                        <button id="more-info">More Info</button>
+                    </div>
+                    <div id="toast" class="toast hidden">Book added to favorites ✅</div>
                 </div>
             </div>
     </body>

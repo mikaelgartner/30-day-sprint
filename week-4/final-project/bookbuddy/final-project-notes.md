@@ -106,9 +106,27 @@ BookBuddy is evolving from a simple book search tool into a full-featured, respo
 
 ---
 
+### 📅 Day 27 Progress — BookBuddy Final Project
 
-### Day 27–28
-- Implement core features (favorites, detail view, filters)
+**Achievements:**
+- Filtered `localStorage` keys to only show saved books (`/works/`)
+- Added visual feedback to “Add to Favorites” button using `.saved` class
+- Implemented floating toast notifications for saving and removing favorites
+- Anchored toast inside modal and bookshelf for focused UX
+- Refactored `removeFavorite()` to delay reload and show toast
+- Confirmed consistent styling and behavior across pages
+
+**Reflections:**
+- Small UX touches (like toasts and button feedback) make a big difference
+- Anchoring feedback near user focus improves clarity and trust
+- Code is modular and ready for polish or expansion
+
+**Next Steps:**
+- Add “Clear All Favorites” button
+- Consider search/filter options for bookshelf
+- Final polish: animations, accessibility, responsiveness
+
+---
 
 ### Day 29
 - Polish design, accessibility, and animations
