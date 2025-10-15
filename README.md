@@ -779,3 +779,34 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Add “Clear All Favorites” button
 - Consider search/filter options for bookshelf
 - Final polish: animations, accessibility, responsiveness
+
+---
+
+# ✅ Day 28: Learnings & Achievements – Theme System & Page Expansion
+
+## 🔍 What I Built
+- Refactored `style.css` to use semantic CSS variables for theme control
+- Implemented light/dark mode toggle using `localStorage` and body class switching
+- Prevented theme flicker by placing theme script at top of `<head>`
+- Scoped dark mode overrides for key variables (`--bg-color`, `--text-color`, `--accent-color`, etc.)
+- Ensured consistent theme behavior across all pages (`index.html`, `bookshelf.html`, `about.html`, `settings.html`)
+- Added two new pages: `about.html` and `settings.html`
+- Styled toast notifications and buttons to follow theme logic
+
+## 🧠 What I Learned
+- How to structure CSS variables for semantic clarity and scalability
+- How to prevent layout flicker by applying theme early in the render cycle
+- How to override variables contextually using `body.dark`
+- How to ensure consistent styling across multiple pages with shared logic
+
+## 🎨 Styling Highlights
+- Semantic variables like `--header-footer-bg`, `--divider-color`, and `--accent-card-hover`
+- Theme toggle styled with slider and dynamic background
+- Toast and button styles refactored to follow theme variables
+- Cleaned up hardcoded colors for better maintainability
+
+## 🚀 Next Steps
+- Customize toast colors for dark mode
+- Refactor button styles into reusable `.btn` class
+- Bundle theme logic into a shared `theme.js` file
+- Final polish: transitions, accessibility, responsiveness
