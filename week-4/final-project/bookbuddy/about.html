@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+        window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("bookbuddy-theme") || "light";
+        document.body.classList.add(savedTheme);
+        });
+        </script>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About BookBuddy</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <header>
+                <div class="header-top">
+                    <h1>About BookBuddy</h1>
+                    <p><em>Your personal book assistant</em></p>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="bookshelf.html">My Bookshelf</a>
+                    <a href="about.html">About</a>
+                    <a href="settings.html">Settings</a>
+                </nav>
+            </header>
+
+            <main>
+                <section>
+                    <h2>The Vision of BookBuddy</h2>
+                    <p>To make book discovery joyful and effortless for every kind of reader — from casual browsers to lifelong collectors.</p>
+                </section>
+
+                <section>
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li>📖 Simplicity — We believe book discovery should be intuitive and clutter-free.</li>
+                        <li>🧠 Curiosity — We encourage exploration and lifelong learning through reading.</li>
+                        <li>🔒 Privacy — Your data stays local. No accounts, no tracking.</li>
+                        <li>🎨 Accessibility — Designed for everyone, on any device.</li>
+                        <li>🤝 Respect — We value open knowledge and build on open-source tools.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>What is BookBuddy?</h2>
+                    <p>BookBuddy is a lightweight book discovery tool designed to help readers explore titles and save their favorites. Whether you're browsing for your next read or organizing your personal bookshelf, BookBuddy makes it simple and intuitive.</p>
+                </section>
+
+                <section>
+                    <h2>Features</h2>
+                    <ul>
+                        <li>🔍 Search books using the Open Library API</li>
+                        <li>📚 Save your favorites to your personal bookshelf</li>
+                        <li>🖼️ View covers and details of any book in a modal</li>
+                        <li>💾 Local storage support - no login required</li>
+                        <li>📱 Responsive design for mobile and desktop</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Credits</h2>
+                    <p>Book data provided by <a href="https://openlibrary.org/developers/api" target="_blank">Open Library API</a>.</p>
+                    <p>Built with HTML, CSS, and Javascript. Icons and assets used under open licenses.</p>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; BookBuddy all rights reserved 2025</p>
+            </footer>
+        </div>
+    </body>
+</html>

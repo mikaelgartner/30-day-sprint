@@ -128,6 +128,30 @@ BookBuddy is evolving from a simple book search tool into a full-featured, respo
 
 ---
 
+### 📅 Day 28 Progress — BookBuddy Final Project
+
+**Achievements:**
+- Refactored `style.css` to use semantic CSS variables for theme control
+- Implemented light/dark mode toggle using `localStorage` and `body` class switching
+- Prevented theme flicker by placing theme script at top of `<head>`
+- Scoped dark mode overrides for `--bg-color`, `--text-color`, `--accent-color`, and related variables
+- Ensured consistent theme behavior across all pages (`index.html`, `bookshelf.html`, `about.html`, `settings.html`)
+- Styled toast notifications and buttons to follow theme logic
+- Cleaned up hardcoded colors and improved variable naming clarity
+- Added two new pages: `about.html` and `settings.html`
+
+**Reflections:**
+- Semantic variables improve clarity and scalability, but require careful naming and documentation
+- Placing theme logic early in the `<head>` prevents layout flicker and improves UX
+- Adding new pages helped clarify the app’s structure and user flow
+- Theme consistency across pages feels like a major milestone
+
+**Next Steps:**
+- Customize toast colors for dark mode
+- Refactor button styles into reusable `.btn` class
+- Consider bundling theme logic into a shared `theme.js` file
+- Final polish: transitions, accessibility, responsiveness
+
 ### Day 29
 - Polish design, accessibility, and animations
 

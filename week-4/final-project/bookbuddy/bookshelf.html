@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("bookbuddy-theme") || "light";
+            document.body.classList.add(savedTheme);
+            });
+        </script>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Bookshelf</title>
+        <title>BookBuddy Bookshelf</title>
         <link rel="stylesheet" href="style.css" />
         <script src="bookshelf.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>My Bookshelf</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="bookshelf.html">My Bookshelf</a>
-                <a href="about.html">About</a>
-                <a href="settings.html">Settings</a>
-            </nav>
-        </header>
+        <div class="page-wrapper">
+            <header>
+                <div class="header-top">
+                    <h1>My Bookshelf</h1>
+                    <p><em>Your saved favorites</em></p>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="bookshelf.html">My Bookshelf</a>
+                    <a href="about.html">About</a>
+                    <a href="settings.html">Settings</a>
+                </nav>
+            </header>
 
-        <main>
-            <section>
-                <h2>Saved Favorites</h2>
-                <div id="bookshelf" class="book-collection"></div>
-            </section>
-            <div id="toast" class="toast hidden">Book removed from favorites ❌</div>
-        </main>
+            <main>
+                <section>
+                    <h2>Saved Favorites</h2>
+                    <div id="bookshelf" class="book-collection"></div>
+                </section>
+                <div id="toast" class="toast hidden">Book removed from favorites ❌</div>
+            </main>
 
-        <footer>
-            <p>&copy; BookBuddy all rights reserved 2025</p>
-        </footer>
+            <footer>
+                <p>&copy; BookBuddy all rights reserved 2025</p>
+            </footer>
+        </div>
     </body>
 </html>

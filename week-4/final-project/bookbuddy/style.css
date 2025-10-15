@@ -1,12 +1,135 @@
-h1, h2 {
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --accent-color: orange;
+    --accent-hover: darkorange;
+
+    --accent-card-hover: darkgoldenrod;
+
+    --divider-color: #ccc;
+
+    --saved-bg: green;
+    --saved-border: darkgreen;
+    --saved-text: white;
+
+    --header-footer-bg: var(--accent-color);
+    --button-bg: var(--accent-color);
+    --button-text: var(--text-color);
+}
+
+body.light {
+    --bg-color: white;
+    --text-color: black;
+    --accent-color: orange;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: darkorange;
+    --accent-hover: orange;
+    --accent-card-hover: darkgoldenrod;
+    --divider-color: #444;
+
+    --header-footer-bg: var(--accent-color);
+    --button-bg: var(--accent-color);
+    --button-text: var(--text-color);
+}
+
+/* Global box-sizing reset */
+* {
+  box-sizing: border-box;
+}
+
+h1 {
     display: flex;
     justify-content: center;
     margin: 20px auto;
+    padding: 0.25rem 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    border-bottom: 1px solid var(--accent-hover);
+}
+
+h2 {
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--accent-hover);
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--header-footer-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--accent-hover);
+}
+
+.header-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.header-top h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header-top p em {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-bottom: 2rem;
 }
 
 section {
@@ -16,6 +139,20 @@ section {
     text-align: center;
     margin: 20px;
     padding: 20px;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+section ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.1rem 0;
 }
 
 .search-bar {
@@ -38,23 +175,47 @@ button {
     padding: 0.5rem;
     font-size: 1rem;
     width: 100px;
-    background-color: orange;
+    background-color: var(--accent-color);
     border-radius: 4px;
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
     cursor: pointer;
 }
 
+button:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-color);
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 2px;
+}
+
 button.saved {
-    background-color: green;
-    color: white;
-    border: 1px solid darkgreen;
+    background-color: var(--saved-bg);
+    color: var(--saved-text);
+    border: 1px solid var(--saved-border);
+}
+
+#clear-storage {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#clear-storage:hover {
+    background-color: var(--accent-hover);
 }
 
 .book-card {
   width: 250px;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--bg-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   text-align: center;
 }
@@ -62,7 +223,7 @@ button.saved {
 
 .book-card:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 10px darkgoldenrod;
+    box-shadow: 0 4px 10px var(--accent-card-hover);
     transition: all 0.3s ease;
 }
 
@@ -93,12 +254,28 @@ button.saved {
 .book-card button {
     margin-top: 0.5rem;
     padding: 0.4rem 0.8rem;
-    background-color: orange;
+    background-color: var(--accent-color);
     border: none;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
     cursor: pointer;
 }
+
+footer {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 2px solid var(--accent-hover);
+    border-radius: 4px;
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
 
 .modal {
     position: fixed;
@@ -119,7 +296,7 @@ button.saved {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: #fff;
+  background: var(--bg-color);
   padding: 2rem;
   border-radius: 6px;
   max-width: 800px;
@@ -127,6 +304,13 @@ button.saved {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+}
+#book-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 .modal-top {
   display: flex;
@@ -149,7 +333,7 @@ button.saved {
 .modal-description {
   width: 100%;
   padding-top: 1rem;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--divider-color);
   overflow-y: auto;
 }
 .modal-footer {
@@ -157,7 +341,7 @@ button.saved {
   justify-content: flex-start;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--divider-color);
 }
 .modal-content p {
     font-size: 1.2rem;
@@ -186,8 +370,8 @@ button.saved {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: green;
-  color: #fff;
+  background-color: var(--saved-bg);
+  color: var(--bg-color);
   padding: 0.8rem 1.2rem;
   border-radius: 6px;
   font-size: 1rem;
@@ -204,6 +388,50 @@ button.saved {
 
 .toast.hidden {
   transform: translateY(20px);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.theme-toggle .slider {
+    width: 50px;
+    height: 24px;
+    background-color: var(--divider-color);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-toggle .slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    top: 2px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle input:checked + .slider::before {
+    transform: translateX(26px);
+}
+
+.theme-toggle input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+.theme-toggle .label-text {
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BookBuddy Settings</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <header>
+                <div class="header-top">
+                    <h1>Settings</h1>
+                    <p><em>Customize your BookBuddy experience</em></p>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="bookshelf.html">My Bookshelf</a>
+                    <a href="about.html">About</a>
+                    <a href="settings.html">Settings</a>
+                </nav>
+            </header>
+
+            <main>
+                <section>
+                    <h2>Theme</h2>
+                    <label class="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                        <span class="label-text">Dark Mode</span>
+                    </label>
+                </section>
+
+                <section>
+                    <h2>Storage</h2>
+                    <p>Your saved books are stored locally in your browser. You can clear them all below, or you can remove a singular book with the "Remove" option. The "Remove" option is provided for any Book thats exists on your Bookshelf in the My Bookshelf part of the page.</p>
+                    <button id="clear-storage">Clear My Bookshelf</button>
+                </section>
+            </main>
+
+
+            <footer>
+                <p>&copy; BookBuddy all rights reserved 2025</p>
+            </footer>
+        </div>
+
+        <script>
+            // Clear bookshelf logic
+            document.getElementById("clear-storage").addEventListener("click", () => {
+                if (localStorage.length === 0) {
+                    showToast("There are currently no books on your Bookshelf");
+                } else {
+                    localStorage.clear();
+                    showToast("Your Bookshelf has been cleared of books ❌");
+                }
+            });
+
+            // Toast notification logic
+            function showToast(message = "Book was successfully added to Bookshelf ✅") {
+                const toast = document.getElementById("toast");
+                toast.textContent = message;
+                toast.classList.remove("hidden");
+                toast.classList.add("show");
+
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                    toast.classList.add("hidden");
+                }, 2000);
+            }
+
+            // Theme toggle logic
+            const toggle = document.getElementById("theme-toggle");
+
+            toggle.addEventListener("click", () => {
+                const isDark = toggle.checked;
+                document.body.classList.remove("light", "dark");
+                document.body.classList.add(isDark ? "dark" : "light");
+                localStorage.setItem("bookbuddy-theme", isDark ? "dark" : "light");
+            });
+
+            window.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("bookbuddy-theme") || "light";
+                document.body.classList.add(savedTheme);
+                toggle.checked = savedTheme === "dark";
+            });
+
+        </script>
+        <div id="toast" class="toast hidden"></div>
+    </body>
+</html>

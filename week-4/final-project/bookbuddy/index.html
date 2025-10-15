@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("bookbuddy-theme") || "light";
+            document.body.classList.add(savedTheme);
+            });
+        </script>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BookBuddy</title>
@@ -8,9 +15,12 @@
         <script src="app.js" defer></script>
     </head>
     <body>
+        <div class="page-wrapper">
         <header>
-            <h1>BookBuddy</h1>
-            <p>Your personal book assistant</p>
+            <div class="header-top">
+                <h1>BookBuddy</h1>
+                <p><em>Discover. Save. Enjoy.</em></p>
+            </div>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="bookshelf.html">My Bookshelf</a>
@@ -31,13 +41,13 @@
 
             <!-- Results Grid Section -->
             <section>
-                <h2>Search Results</h2>
+                <h2>🔍  Search Results  🔍</h2>
                 <div id="results" class="results-container"></div>
             </section>
 
             <!-- Featured Books of the Day section -->
             <section>
-                <h2>Books of the Day</h2>
+                <h2>📖  Books of the Day  📖</h2>
                 <div id="books-of-the-day" class="book-collection"></div>
             </section>
 
@@ -73,6 +83,7 @@
                     <div id="toast" class="toast hidden">Book added to favorites ✅</div>
                 </div>
             </div>
+        </div>
     </body>
 </html>
 
