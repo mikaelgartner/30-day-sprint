@@ -1,8 +1,15 @@
 // Function to search books by title using Open Library API
 async function searchBooks() {
     const query = document.getElementById("search").value;
+    const wrapper = document.getElementById("results-wrapper")
+    const heading = document.getElementById("results-heading");
     const resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = "<p>Loading...</p>";
+    
+    if (!query) {
+      resultsContainer.innerHTML = "";
+      wrapper.classList.add("hidden");
+      return;
+    }
 
     try {
       const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
@@ -33,6 +40,15 @@ async function searchBooks() {
       });
 
       resultsContainer.innerHTML = bookCards.join('');
+
+      heading.textContent = `🔍  Search Results: "${query}"  🔍`;
+      wrapper.classList.remove("hidden");
+      wrapper.classList.add("fade-in");
+
+      // Optional: remove the class after animation
+      setTimeout(() => {
+      wrapper.classList.remove("fade-in");
+    }, 500);
 
     } catch (error) {
       resultsContainer.innerHTML = "<p>Error fetching book data. Please try again later.</p>";
@@ -230,6 +246,7 @@ document.querySelector(".modal-description").innerHTML = `
   };
 
   modal.classList.remove("hidden");
+  document.getElementById("add-to-favorites").focus();
 }
 
 document.querySelector(".close-button").addEventListener("click", () => {
@@ -239,6 +256,13 @@ document.querySelector(".close-button").addEventListener("click", () => {
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("book-modal");
   if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  const modal = document.getElementById("book-modal");
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     modal.classList.add("hidden");
   }
 });

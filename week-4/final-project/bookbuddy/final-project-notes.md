@@ -152,8 +152,34 @@ BookBuddy is evolving from a simple book search tool into a full-featured, respo
 - Consider bundling theme logic into a shared `theme.js` file
 - Final polish: transitions, accessibility, responsiveness
 
-### Day 29
-- Polish design, accessibility, and animations
+---
+
+### 📅 Day 29 Progress — BookBuddy Final Project
+
+**Achievements:**
+- Refined modal accessibility with `role="dialog"` and `aria-labelledby`
+- Added keyboard support: Escape key closes modal, focus set on open
+- Improved search input with hidden label and `aria-label`
+- Verified button accessibility and toast announcements with `aria-live`
+- Reorganized global event listeners for clarity and performance
+- Enhanced CSS transitions and animations:
+  - Fade-in effects for search results and modals
+  - Smooth hover transitions on book cards and buttons
+  - Responsive layout polish for mobile and desktop
+- Finalized `README.md` with accessibility features and setup instructions
+- Updated `final-project-notes.md` to reflect UX and accessibility work
+
+**Reflections:**
+- Accessibility improvements made BookBuddy feel more inclusive and professional
+- Focus management and Escape key support added real keyboard usability
+- CSS animations now feel smooth and intentional, not distracting
+- Today’s polish work tied together visual design, UX, and performance
+
+**Next Steps:**
+- Additional polish and testing across different devices
+- Write Day 30 reflection and showcase summary
+- Add final screenshots or demo link to `README.md`
+- Celebrate completion of the 30-day sprint 🎉
 
 ### Day 30
 - Final testing, README, and deployment
