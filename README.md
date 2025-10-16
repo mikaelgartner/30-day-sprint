@@ -810,3 +810,35 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Refactor button styles into reusable `.btn` class
 - Bundle theme logic into a shared `theme.js` file
 - Final polish: transitions, accessibility, responsiveness
+
+---
+
+# ✅ Day 29: Learnings & Achievements – Accessibility & UX Polish
+
+## 🔍 What I Built
+- Added ARIA roles to modal (`role="dialog"`, `aria-labelledby`) for screen reader support
+- Labeled search input with hidden `<label>` and `aria-label` for accessibility
+- Enabled keyboard navigation: Escape key closes modal, focus set on open
+- Verified toast notifications use `aria-live="polite"` for screen reader announcements
+- Reorganized global event listeners for clarity and performance
+- Enhanced CSS transitions and animations:
+  - Fade-in effects for search results and modals
+  - Smooth hover transitions on book cards and buttons
+  - Responsive layout polish across mobile and desktop
+
+## 🧠 What I Learned
+- How to use ARIA roles and labels to improve accessibility
+- How to manage focus for keyboard users inside modals
+- How to structure event listeners for clean, maintainable logic
+- How to use transitions and animations to enhance UX without overwhelming it
+
+## 🎨 Styling Highlights
+- Refined modal fade-in and backdrop transitions
+- Added hover effects with subtle scaling and color shifts
+- Improved layout responsiveness and spacing consistency
+- Verified theme compatibility across animations and interactive elements
+
+## 🚀 Next Steps
+- Write Day 30 reflection and showcase summary
+- Add final screenshots or demo link to `README.md`
+- Celebrate completion of the 30-day sprint 🎉
