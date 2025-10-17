@@ -34,13 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function removeFavorite(key) {
   localStorage.removeItem(key);
-  showToast("Book removed from Bookshelf ❌");
+  showToast("Removed from your Bookshelf ❌");
   setTimeout(() => {
     location.reload();
   }, 1500);
 }
 
-function showToast(message = "Book was successfully added to Bookshelf ✅") {
+function showToast(message = "Added to your Bookshelf ✅") {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.classList.remove("hidden");
@@ -49,5 +49,5 @@ function showToast(message = "Book was successfully added to Bookshelf ✅") {
   setTimeout(() => {
     toast.classList.remove("show");
     toast.classList.add("hidden");
-  }, 2000);
+  }, 1500);
 }

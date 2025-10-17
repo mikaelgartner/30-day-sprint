@@ -4,7 +4,7 @@ async function searchBooks() {
     const wrapper = document.getElementById("results-wrapper")
     const heading = document.getElementById("results-heading");
     const resultsContainer = document.getElementById("results");
-    
+
     if (!query) {
       resultsContainer.innerHTML = "";
       wrapper.classList.add("hidden");
@@ -267,7 +267,7 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-function showToast(message = "Book was successfully added to Bookshelf ✅") {
+function showToast(message = "Added to your Bookshelf ✅") {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.classList.remove("hidden");
@@ -284,3 +284,39 @@ fetchBooksOfTheDay();
 
 // Fetch top-rated books on page load
 fetchTopRatedBooks();
+
+// Onboarding Modal for new users
+window.addEventListener("DOMContentLoaded", () => {
+  const hasSeenModal = localStorage.getItem("seenBookBuddyModal");
+
+  if (!hasSeenModal) {
+    showOnboardingModal();
+  }
+
+  const modalCloseBtn = document.querySelector(".onboarding-close-button");
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", () => {
+      localStorage.setItem("seenBookBuddyModal", "true");
+      hideOnboardingModal();
+    });
+  }
+});
+
+function showOnboardingModal() {
+  const modal = document.querySelector(".onboarding-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+    modal.querySelector(".onboarding-modal-content")?.focus();
+  }
+}
+
+function hideOnboardingModal() {
+  const modal = document.querySelector(".onboarding-modal");
+  if (modal) {
+    modal.classList.add("hidden");
+  }
+}
+
+function resetOnboardingModal() {
+  localStorage.removeItem("seenBookBuddyModal");
+}
