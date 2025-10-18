@@ -267,6 +267,23 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+// Get the button element once
+const backToTopButton = document.getElementById("backToTop");
+
+// Show or hide button on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "inline-flex";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+// Smooth scroll to top on button click
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function showToast(message = "Added to your Bookshelf ✅") {
   const toast = document.getElementById("toast");
   toast.textContent = message;
@@ -282,7 +299,7 @@ function showToast(message = "Added to your Bookshelf ✅") {
 // Fetch Books of the Day on page load
 fetchBooksOfTheDay();
 
-// Fetch top-rated books on page load
+// Fetch Top-Rated books on page load
 fetchTopRatedBooks();
 
 // Onboarding Modal for new users
@@ -319,4 +336,18 @@ function hideOnboardingModal() {
 
 function resetOnboardingModal() {
   localStorage.removeItem("seenBookBuddyModal");
+}
+
+
+// Function that clears the searchInput and resultsContainer of its content
+function clearSearch() {
+  const searchInput = document.getElementById("search");
+  const resultsWrapper = document.getElementById("results-wrapper");
+  const resultsContainer = document.getElementById("results");
+  const resultsHeading = document.getElementById("results-heading");
+
+  searchInput.value = "";
+  resultsContainer.innerHTML = "";
+  resultsHeading.textContent = "";
+  resultsWrapper.classList.add("hidden");
 }

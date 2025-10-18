@@ -36,7 +36,20 @@
                     <div class="search-bar">
                         <label for="search" class="visually-hidden">Search for a book</label>
                         <input type="text" class="search-input" id="search" placeholder="Search for a Book">
-                        <button onclick="searchBooks()">Search</button>
+                        <button onclick="searchBooks()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                            </svg>
+                            Search
+                        </button>
+                        <button onclick="clearSearch()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+
+                            Clear
+                        </button>
                     </div>
             </section>
 
@@ -61,6 +74,7 @@
                 </div>
             </section>
         </main>
+        <button id="backToTop" title="Back to top" aria-label="Back to top" onclick="scrollToTop()">↑</button>
         <footer role="contentinfo">
             <p>&copy; BookBuddy all rights reserved 2025</p>
         </footer>
