@@ -892,3 +892,29 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Explore new technologies and frameworks  
 - Engage with developer communities for feedback and collaboration  
 - Keep documenting progress and reflections beyond the sprint
+
+---
+
+# ✅ Day 32: Learnings & Achievements – Resilience, Modularity & Real-World Debugging
+
+## 🔍 What I Built
+- Refactored scroll-to-top functionality into a modular `utils.js` for clean reuse across pages  
+- Successfully integrated the scroll button into `bookshelf.html` and `about.html` with dynamic visibility and smooth UX  
+- Implemented sorting of bookshelf favorites by **title**, **author**, and **date added**, enhancing usability and control  
+- Strengthened BookBuddy’s architecture by isolating page-specific logic and preventing cross-page script errors  
+
+## 🧠 What I Learned
+- How shared scripts can cause DOM errors if not scoped properly  
+- The importance of `DOMContentLoaded` and null checks when working across multiple HTML pages  
+- That even stable APIs like OpenLibrary can change behavior unexpectedly — and how to adapt when they do  
+
+## 🎨 Styling Highlights
+- Maintained visual consistency for the scroll button across pages  
+- Ensured accessibility with clear labels and responsive behavior  
+- Preserved modularity without compromising design cohesion  
+
+## 🚀 Next Steps
+- Monitor OpenLibrary’s API behavior and prepare fallback strategies (proxy, caching, or backend)  
+- Continue refining BookBuddy’s sorting and UX features  
+- Explore lightweight backend options to bypass CORS limitations  
+- Keep documenting technical decisions and architectural improvements
