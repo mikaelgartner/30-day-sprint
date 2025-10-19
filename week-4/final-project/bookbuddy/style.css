@@ -631,3 +631,65 @@ footer p {
     }
 }
 
+.segmented-control {
+    display: inline-flex;
+    border-radius: 6px;
+    overflow: hidden;
+    user-select: none;
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-hover);
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 0;
+    gap: 0;
+}
+
+.segmented-control button {
+    width: 125px;
+    height: 45px;
+    background: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    border-left: 1px solid var(--accent-hover);
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.segmented-control button:first-child {
+    border-left: none;
+}
+
+.segmented-control button:not(.active):hover {
+    background-color: var(--accent-hover);
+    color: var(--button-text);
+}
+
+.segmented-control button.active {
+    background-color: var(--accent-color);
+    color: var(--button-text);
+    cursor: default;
+}
+
+#sort-direction {
+  width: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+  border-left: 1px solid var(--accent-hover);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#sort-direction:hover {
+  background-color: var(--accent-hover);
+  color: var(--button-text);
+}
+
+

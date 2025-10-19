@@ -13,6 +13,7 @@
         <title>BookBuddy Bookshelf</title>
         <link rel="stylesheet" href="style.css" />
         <script src="bookshelf.js" defer></script>
+        <script src="utils.js" defer></script>
     </head>
     <body>
         <div class="page-wrapper">
@@ -32,11 +33,21 @@
             <main>
                 <section>
                     <h2>Saved Favorites</h2>
+                    
+                    <label for="sort-options" class="visually-hidden">Sort by:</label>
+                    <div class="segmented-control">
+                        <button class="active" title="Sort by Title">Title</button>
+                        <button title="Sort by Author">Author</button>
+                        <button title="Sort by Date Added">Date Added</button>
+                        <button id="sort-direction" title="Toggle sort direction">↑</button>
+                    </div>
+
+
                     <div id="bookshelf" class="book-collection"></div>
                 </section>
                 <div id="toast" class="toast hidden">Book removed from favorites ❌</div>
             </main>
-
+            <button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
             <footer>
                 <p>&copy; BookBuddy all rights reserved 2025</p>
             </footer>

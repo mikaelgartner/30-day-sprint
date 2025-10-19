@@ -227,7 +227,7 @@ document.querySelector(".modal-description").innerHTML = `
   console.log("Final key used:", key);
   console.log("Book saved:", JSON.stringify(book));
 
-  localStorage.setItem(key, JSON.stringify(book));
+  localStorage.setItem(key, JSON.stringify({ ...book, savedAt: Date.now() }));
 
   const favButton = document.getElementById("add-to-favorites");
   favButton.textContent = "Added to Bookshelf";
