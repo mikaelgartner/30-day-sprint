@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${title}</h3>
           <p><strong>Author:</strong> ${author}</p>
           <p><strong>First published:</strong> ${year}</p>
-          <button onclick="removeFavorite('${book._key}')">Remove</button>
+          <button onclick="removeFavorite('${book._key}')" <button onclick="removeFavorite('${book._key}')" style="display: block; margin: 0 auto; text-align: center;">Remove</button>
         </div>
       `;
     });
