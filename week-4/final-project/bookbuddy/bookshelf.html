@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BookBuddy Bookshelf</title>
         <link rel="stylesheet" href="style.css" />
+        <script src="app.js" defer></script>
         <script src="bookshelf.js" defer></script>
         <script src="utils.js" defer></script>
     </head>
@@ -51,6 +52,22 @@
             <footer>
                 <p>&copy; BookBuddy all rights reserved 2025</p>
             </footer>
+        </div>
+            <div id="book-modal" class="modal hidden">
+                <div class="modal-content">
+                    <button class="close-button" id="bookshelf-modal-close-button" aria-label="Close modal">×</button>
+                    <div class="modal-top">
+                        <img id="modal-cover" />
+                        <div id="modal-body" class="modal-body">
+                            <!-- Book info and review form will be injected here -->
+                        </div>
+                    </div>
+                    <div class="modal-description"></div>
+                <div class="modal-footer">
+                    <button id="add-to-favorites">Add To Favorites</button>
+                    <button id="more-info">More Info</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>

@@ -59,6 +59,8 @@ async function searchBooks() {
 // Fetch and display 3 Books of the Day from multiple popular subjects
 async function fetchBooksOfTheDay() {
   const container = document.getElementById("books-of-the-day");
+  if (!container) return; // Prevent error on pages without this section
+
   container.innerHTML = "<p>Loading Books of the Day...</p>";
 
   try {
@@ -108,6 +110,8 @@ async function fetchBooksOfTheDay() {
 // Fetch and display 10 top rated books from multiple popular subjects
 async function fetchTopRatedBooks() {
   const container = document.getElementById("top-rated-books");
+  if (!container) return; // Prevent error on pages without this section
+
   container.innerHTML = "<p>Loading top-rated books...</p>";
 
   try {
@@ -155,7 +159,7 @@ async function fetchTopRatedBooks() {
   }
 }
 
-async function showBookModal(book) {
+async function showBookModal(book, isFromBookShelf = false) {
   const modal = document.getElementById("book-modal");
   const modalBody = document.getElementById("modal-body");
   const modalCover = document.getElementById("modal-cover");
@@ -196,10 +200,34 @@ async function showBookModal(book) {
 
   // Injecting modal content dynamically through return statement
  modalBody.innerHTML = `
-  <p><strong>Title:</strong> ${title}</p>
+  <h2>${title}</h2>
   <p><strong>Author:</strong> ${author}</p>
   <p><strong>First published:</strong> ${year}</p>
   <p><strong>Subjects:</strong> ${subjects}</p>
+  ${isFromBookShelf ? (() => {
+    const savedBook = JSON.parse(localStorage.getItem(book._key));
+    const existingRating = savedBook?.rating || "";
+    const existingReview = savedBook?.review || "";
+
+    return `
+      <div class="review-section">
+        <label for="rating-${book._key}">Your Rating:</label>
+        <select id="rating-${book._key}">
+          <option value="">Select</option>
+          <option value="1" ${existingRating == 1 ? "selected" : ""}>★☆☆☆☆</option>
+          <option value="2" ${existingRating == 2 ? "selected" : ""}>★★☆☆☆</option>
+          <option value="3" ${existingRating == 3 ? "selected" : ""}>★★★☆☆</option>
+          <option value="4" ${existingRating == 4 ? "selected" : ""}>★★★★☆</option>
+          <option value="5" ${existingRating == 5 ? "selected" : ""}>★★★★★</option>
+        </select>
+
+        <label for="review-${book._key}">Your Review:</label>
+        <textarea id="review-${book._key}" placeholder="Write a Review">${existingReview}</textarea>
+
+        <button onclick="saveReview('${book._key}')">Save Review</button>
+      </div>
+    `;
+  })() : ""}
 `;
 
 document.querySelector(".modal-description").innerHTML = `
@@ -249,9 +277,12 @@ document.querySelector(".modal-description").innerHTML = `
   document.getElementById("add-to-favorites").focus();
 }
 
-document.querySelector(".close-button").addEventListener("click", () => {
+const closeButton = document.querySelector(".close-button");
+if (closeButton) {
+  closeButton.addEventListener("click", () => {
   document.getElementById("book-modal").classList.add("hidden");
 });
+}
 
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("book-modal");
@@ -350,4 +381,28 @@ function clearSearch() {
   resultsContainer.innerHTML = "";
   resultsHeading.textContent = "";
   resultsWrapper.classList.add("hidden");
+}
+
+// Function that grabs the rating and review from modal and updates corresponding book in localStorage
+function saveReview(bookKey) {
+  const rating = document.getElementById(`rating-${bookKey}`).value;
+  const review = document.getElementById(`review-${bookKey}`).value;
+
+  const savedBook = JSON.parse(localStorage.getItem(bookKey));
+  if (!savedBook) {
+    console.warn("Book not found in localStorage");
+    return;
+  }
+
+  const updatedBook = {
+    ...savedBook,           // copies all existing properties from the saved book
+    rating,                 // adds or updates the rating field
+    review,                 // adds or updates the review field
+    reviewedAt: Date.now()  // adds a timestamp (optional)
+  };
+
+  localStorage.setItem(bookKey, JSON.stringify(updatedBook));
+
+  // Optional: show a toast or update the modal UI
+  alert("Review Saved");
 }

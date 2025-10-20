@@ -1,37 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const bookshelf = document.getElementById("bookshelf");
-
-  const keys = Object.keys(localStorage).filter(key => key.startsWith("/works/"));
-
-  if (keys.length === 0) {
-    bookshelf.innerHTML = "<p>No favorites saved yet.</p>";
-    return;
-  }
-
-  const bookCards = keys.map(key => {
-    const book = JSON.parse(localStorage.getItem(key));
-    const title = book.title || "No title available";
-    const author = book.authors?.[0]?.name || book.author_name?.join(", ") || "Unknown author";
-    const year = book.first_publish_year || "N/A";
-    const coverId = book.cover_i || book.cover_id;
-    const cover = coverId
-      ? `<img src="https://covers.openlibrary.org/b/id/${coverId}-M.jpg" alt="Book cover">`
-      : "<p>No cover image</p>";
-
-    return `
-      <div class="book-card">
-        ${cover}
-        <h3>${title}</h3>
-        <p><strong>Author:</strong> ${author}</p>
-        <p><strong>First published:</strong> ${year}</p>
-        <button onclick="removeFavorite('${key}')">Remove</button>
-      </div>
-    `;
-  });
-
-  bookshelf.innerHTML = bookCards.join("");
-});
-
 function removeFavorite(key) {
   localStorage.removeItem(key);
   showToast("Removed from your Bookshelf ❌");
@@ -92,12 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
         : "<p>No cover image</p>";
 
       return `
-        <div class="book-card">
+        <div class="book-card" data-key="${book._key}">
           ${cover}
           <h3>${title}</h3>
           <p><strong>Author:</strong> ${author}</p>
           <p><strong>First published:</strong> ${year}</p>
-          <button onclick="removeFavorite('${book._key}')" <button onclick="removeFavorite('${book._key}')" style="display: block; margin: 0 auto; text-align: center;">Remove</button>
+          <p><strong>Your Rating:</strong> ${book.rating ? `${book.rating} ★` : "Not rated"}</p>
+          <p><strong>Your Review:</strong> ${book.review || "No review yet"}</p>
+          <button onclick="removeFavorite('${book._key}'); event.stopPropagation();" style="display: block; margin: 0 auto; text-align: center;">Remove</button>
         </div>
       `;
     });
@@ -149,4 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loadBooks();
+
+  document.getElementById("bookshelf").addEventListener("click", e => {
+  const card = e.target.closest(".book-card");
+  if (!card) return;
+
+  const key = card.dataset.key;
+  const book = JSON.parse(localStorage.getItem(key));
+  showBookModal(book, true);
+});
+
+
 });
