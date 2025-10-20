@@ -918,3 +918,43 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Continue refining BookBuddy’s sorting and UX features  
 - Explore lightweight backend options to bypass CORS limitations  
 - Keep documenting technical decisions and architectural improvements
+
+---
+
+# 📘 Day 33 – Learnings & Achievements
+
+## ✅ Learnings
+
+- **Modal layout alignment**
+  - Used `flexbox`, `object-fit`, and `height: 100%` to align book cover with content column.
+  - Discovered how `align-items: stretch` vs `flex-start` affects vertical alignment.
+
+- **Scoped styling**
+  - Learned to isolate styles using unique IDs or classes (e.g. `#bookshelf-modal-close-button`) to avoid global conflicts.
+  - Preserved functionality by keeping shared classes while customizing appearance.
+
+- **Debugging localStorage**
+  - Identified why review saving failed: missing `_key` in saved book object.
+  - Learned to store the key inside the book object to ensure consistent retrieval.
+
+- **Functional vs visual separation**
+  - Maintained behavior with shared class (`close-button`) while styling with a unique ID.
+  - Reinforced modular design principles for scalable UI components.
+
+- **Console-driven troubleshooting**
+  - Used browser dev tools to trace warnings and verify data flow.
+  - Validated form behavior and localStorage updates with targeted logging.
+
+---
+
+## 🛠️ Achievements
+
+- 🎯 Aligned modal layout for visual harmony between image and content
+- 🧾 Anchored book title flush with top of content container
+- ❌ Replaced oversized “Close” button with a minimal × icon
+- 🧩 Scoped close button styling without breaking modal functionality
+- 🛠️ Debugged and fixed review form saving logic
+- 💾 Ensured reviews persist in localStorage with correct key mapping
+- 🧼 Improved modularity and maintainability across modal components
+
+---
