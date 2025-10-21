@@ -446,6 +446,12 @@ footer p {
     box-sizing: border-box;
 }
 
+.stars {
+    color: orange;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
 .close-button {
     position: absolute;
     top: 10px;

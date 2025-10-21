@@ -255,7 +255,7 @@ document.querySelector(".modal-description").innerHTML = `
   console.log("Final key used:", key);
   console.log("Book saved:", JSON.stringify(book));
 
-  localStorage.setItem(key, JSON.stringify({ ...book, savedAt: Date.now() }));
+  localStorage.setItem(key, JSON.stringify({ ...book, _key: key, savedAt: Date.now() }));
 
   const favButton = document.getElementById("add-to-favorites");
   favButton.textContent = "Added to Bookshelf";
@@ -402,7 +402,11 @@ function saveReview(bookKey) {
   };
 
   localStorage.setItem(bookKey, JSON.stringify(updatedBook));
-
   // Optional: show a toast or update the modal UI
-  alert("Review Saved");
+  console.log("Review Saved");
+
+  // ✅ Trigger bookshelf refresh if you're on that page
+  if (window.location.pathname.includes("bookshelf.html")) {
+    document.dispatchEvent(new Event("reviewUpdated"));
+  }
 }

@@ -28,15 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load books from localStorage
   function loadBooks() {
-    const keys = Object.keys(localStorage).filter(key => key.startsWith("/works/"));
+    const keys = Object.keys(localStorage).filter(key => {
+    const item = localStorage.getItem(key);
+    try {
+      const parsed = JSON.parse(item);
+      return parsed?.title && parsed?._key;
+    } catch {
+      return false;
+    }
+  });
+
     books = keys.map(key => {
-      const book = JSON.parse(localStorage.getItem(key));
+    const book = JSON.parse(localStorage.getItem(key));
       return {
         ...book,
         _key: key,
         _savedAt: book.savedAt || Date.now() // fallback if not tracked
-      };
-    });
+    };
+  });
 
     renderBooks(books);
   }
@@ -57,13 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<img src="https://covers.openlibrary.org/b/id/${coverId}-M.jpg" alt="Book cover">`
         : "<p>No cover image</p>";
 
+          const filled = "★".repeat(book.rating);
+          const empty = "☆".repeat(5 - book.rating);
+          const stars = `<span class="stars">${filled}${empty}</span>`;
+
       return `
         <div class="book-card" data-key="${book._key}">
           ${cover}
           <h3>${title}</h3>
           <p><strong>Author:</strong> ${author}</p>
           <p><strong>First published:</strong> ${year}</p>
-          <p><strong>Your Rating:</strong> ${book.rating ? `${book.rating} ★` : "Not rated"}</p>
+          <p><strong>Your Rating:</strong> ${book.rating ? stars : "Not rated"}</p>
           <p><strong>Your Review:</strong> ${book.review || "No review yet"}</p>
           <button onclick="removeFavorite('${book._key}'); event.stopPropagation();" style="display: block; margin: 0 auto; text-align: center;">Remove</button>
         </div>
@@ -116,16 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
     sortBooks(criteria === "date added" ? "date" : criteria);
   });
 
-  loadBooks();
+    loadBooks();
 
-  document.getElementById("bookshelf").addEventListener("click", e => {
-  const card = e.target.closest(".book-card");
-  if (!card) return;
+    document.addEventListener("reviewUpdated", () => {
+    loadBooks();
+    });
 
-  const key = card.dataset.key;
-  const book = JSON.parse(localStorage.getItem(key));
-  showBookModal(book, true);
-});
+    document.getElementById("bookshelf").addEventListener("click", e => {
+    const card = e.target.closest(".book-card");
+    if (!card) return;
 
-
+    const key = card.dataset.key;
+    const book = JSON.parse(localStorage.getItem(key));
+    showBookModal(book, true);
+  });
 });
