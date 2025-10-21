@@ -958,3 +958,34 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - 🧼 Improved modularity and maintainability across modal components
 
 ---
+
+# 📚 Day 34: Learnings and Achievements
+
+## ✅ Technical Wins
+- Refactored `saveReview()` to persist rating and review with correct localStorage key
+- Implemented auto-refresh of bookshelf view using `reviewUpdated` event — no more manual reloads!
+- Modularized review logic for clean separation between modal and bookshelf
+- Replaced numeric rating with expressive star display using `"★".repeat(rating)`
+- Enhanced UX with full 5-star scale (`★★★☆☆`) and orange-themed styling via `.stars` class
+
+## 🎨 UI/UX Polish
+- Stars now match BookBuddy’s orange theme for visual harmony
+- Consistent layout across all cards with fixed-width star display
+- Improved clarity and emotional feedback for user-submitted reviews
+
+## 🧠 Learnings
+- DOM updates require explicit re-rendering after localStorage changes
+- Custom events (`document.dispatchEvent`) are a clean way to trigger cross-module updates
+- Visual feedback (stars, colors) enhances user satisfaction and app personality
+
+## 🛠️ Tools & Techniques
+- `repeat()` for dynamic star rendering
+- Scoped CSS styling with `.stars` class
+- Defensive coding with fallback values (`book.title || "No title available"`)
+
+## 🎉 Emotional Wins
+- Felt the joy of seeing reviews sync instantly across views
+- Celebrated pixel-perfect polish and theme alignment
+- Closed the day with a clean, expressive bookshelf and no console errors
+
+---
