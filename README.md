@@ -989,3 +989,51 @@ Ready to refactor glow colors and build a scalable theme system using custom pro
 - Closed the day with a clean, expressive bookshelf and no console errors
 
 ---
+
+# 🌟 Day 35 — Toast System Triumph & UX Polish
+
+---
+
+## ✅ Achievements
+
+- Refactored the entire toast notification system across all pages:
+  - Introduced `#toast-global` and `#toast-modal` containers
+  - Removed legacy `#toast` references and outdated `showToast()` definitions
+  - Ensured consistent placement, styling, and accessibility
+
+- Centralized toast logic in `app.js` with a scoped `showToast(message, scope)` function:
+  - Supports `"global"` and `"modal"` contexts
+  - Prevents duplicate definitions and DOM mismatches
+  - Injects dynamic messages with smooth transitions
+
+- Restored and enhanced toast animations:
+  - Reconnected `.toast.show` to the `fadeInUp` keyframe
+  - Achieved beautiful, expressive feedback for all toast events
+  - Verified animation consistency across light/dark themes and modal/global contexts
+
+- Validated toast behavior across all user flows:
+  - ✅ Add to Favorites
+  - ✅ Remove from Bookshelf
+  - ✅ Clear Bookshelf
+  - ✅ Modal interactions
+  - ✅ Settings actions
+
+---
+
+## 📚 Learnings
+
+- **Scoped feedback matters** — separating modal vs global toasts improves clarity, accessibility, and emotional tone
+- **Modular CSS and JS reduce bugs** — centralizing logic and styling avoids duplication and ensures consistency
+- **Animation is emotional** — subtle transitions elevate the user experience and reinforce feedback loops
+- **Refactoring is rewarding** — even small changes (like renaming `#toast`) can unlock deeper UX improvements
+
+---
+
+## 🎉 Emotional Impact
+
+BookBuddy now feels alive. Every action — from saving a favorite to clearing the bookshelf — is met with clear, animated, scoped feedback.  
+The toast system is no longer just functional; it’s expressive, modular, and delightful.
+
+This was a polish pass that turned friction into flow.
+
+---
