@@ -17,11 +17,24 @@
     --button-text: var(--text-color);
 }
 
+/* Light theme */
+
 body.light {
     --bg-color: white;
     --text-color: black;
     --accent-color: orange;
 }
+
+body.light .review-section textarea::placeholder {
+    color: var(--accent-hover);
+    font-style: italic;
+}
+
+body.light .review-section textarea {
+    color: var(--text-color);
+}
+
+/* Dark Theme */
 
 body.dark {
     --bg-color: #121212;
@@ -35,6 +48,27 @@ body.dark {
     --button-bg: var(--accent-color);
     --button-text: var(--text-color);
 }
+
+body.dark .review-section select,
+body.dark .review-section textarea {
+    background-color: #1e1e1e;
+}
+
+body.dark .review-section textarea::placeholder {
+    color: var(--accent-hover);
+    font-style: italic;
+}
+
+body.dark .review-section textarea {
+    color: var(--accent-hover);
+}
+
+body.dark .modal-content {
+    background-color: #1e1e1e;
+    color: var(--text-color);
+}
+
+
 
 /* Global box-sizing reset */
 * {
@@ -439,17 +473,48 @@ footer p {
     margin-top: 0.5rem;
 }
 
+.review-section select {
+    color: darkorange;
+    font-weight: bold;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+.review-section select:focus {
+    outline: 2px solid var(--text-color);
+}
+
 .review-section textarea {
     width: 100%;
     height: 80px;
     resize: vertical;
     box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 0.4rem;
+    border: 1px solid var(--text-color);
+}
+
+.review-section textarea:focus {
+    outline: 2px solid var(--text-color);
+}
+
+.review-section option {
+    color: var(--accent-hover);
+    font-size: 1.2rem;
 }
 
 .stars {
-    color: orange;
+    color: darkorange;
     font-size: 1.2em;
     letter-spacing: 2px;
+}
+
+.stars:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
 }
 
 .close-button {
@@ -744,6 +809,24 @@ footer p {
 #sort-direction:hover {
   background-color: var(--accent-hover);
   color: var(--button-text);
+}
+
+#toast-global {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+#toast-modal {
+    position: absolute;
+    bottom: 34px;
+    transform: translateX(-50%);
+    z-index: 1500;
+}
+
+.toast.show {
+    animation: fadeInUp 0.4s ease forwards;
 }
 
 

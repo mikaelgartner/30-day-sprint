@@ -164,6 +164,9 @@ async function showBookModal(book, isFromBookShelf = false) {
   const modalBody = document.getElementById("modal-body");
   const modalCover = document.getElementById("modal-cover");
 
+  const favButton = document.getElementById("add-to-favorites");
+  favButton.style.display = isFromBookShelf ? "none" : "inline-block";
+
   const title = book.title || "No title available";
   const author = book.authors?.[0]?.name || book.author_name?.join(", ") || "Unknown author";
   const year = book.first_publish_year || "N/A";
@@ -211,7 +214,7 @@ async function showBookModal(book, isFromBookShelf = false) {
 
     return `
       <div class="review-section">
-        <label for="rating-${book._key}">Your Rating:</label>
+        <label for="rating-${book._key}"><strong>Your Rating:</strong></label>
         <select id="rating-${book._key}">
           <option value="">Select</option>
           <option value="1" ${existingRating == 1 ? "selected" : ""}>★☆☆☆☆</option>
@@ -221,7 +224,7 @@ async function showBookModal(book, isFromBookShelf = false) {
           <option value="5" ${existingRating == 5 ? "selected" : ""}>★★★★★</option>
         </select>
 
-        <label for="review-${book._key}">Your Review:</label>
+        <label for="review-${book._key}"><strong>Your Review:</strong></label>
         <textarea id="review-${book._key}" placeholder="Write a Review">${existingReview}</textarea>
 
         <button onclick="saveReview('${book._key}')">Save Review</button>
@@ -243,7 +246,7 @@ document.querySelector(".modal-description").innerHTML = `
 
   // Add button listeners
   document.getElementById("add-to-favorites").onclick = () => {
-    showToast();
+    showToast("Added to your Bookshelf ✅", "modal");
     console.log("Add to Favorites clicked");
 
   const key = workKey || book.title?.replace(/\s+/g, "_") || `book_${Date.now()}`;
@@ -315,8 +318,11 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function showToast(message = "Added to your Bookshelf ✅") {
-  const toast = document.getElementById("toast");
+function showToast(message = "Added to your Bookshelf ✅", scope = "global") {
+  const toastId = scope === "modal" ? "toast-modal" : "toast-global";
+  const toast = document.getElementById(toastId);
+  if (!toast) return;
+
   toast.textContent = message;
   toast.classList.remove("hidden");
   toast.classList.add("show");
@@ -403,10 +409,11 @@ function saveReview(bookKey) {
 
   localStorage.setItem(bookKey, JSON.stringify(updatedBook));
   // Optional: show a toast or update the modal UI
-  console.log("Review Saved");
+  showToast("Book rated and reviewed ✅", "modal");
 
   // ✅ Trigger bookshelf refresh if you're on that page
   if (window.location.pathname.includes("bookshelf.html")) {
     document.dispatchEvent(new Event("reviewUpdated"));
   }
 }
+

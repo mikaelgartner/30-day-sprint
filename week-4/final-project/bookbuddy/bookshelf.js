@@ -1,20 +1,8 @@
 function removeFavorite(key) {
   localStorage.removeItem(key);
-  showToast("Removed from your Bookshelf ❌");
+  showToast("Removed from your Bookshelf ❌", "global");
   setTimeout(() => {
     location.reload();
-  }, 1500);
-}
-
-function showToast(message = "Added to your Bookshelf ✅") {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.remove("hidden");
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-    toast.classList.add("hidden");
   }, 1500);
 }
 
@@ -77,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Author:</strong> ${author}</p>
           <p><strong>First published:</strong> ${year}</p>
           <p><strong>Your Rating:</strong> ${book.rating ? stars : "Not rated"}</p>
-          <p><strong>Your Review:</strong> ${book.review || "No review yet"}</p>
+          <p><strong>Your Review:</strong> ${book.review || "Not reviewed"}</p>
           <button onclick="removeFavorite('${book._key}'); event.stopPropagation();" style="display: block; margin: 0 auto; text-align: center;">Remove</button>
         </div>
       `;
