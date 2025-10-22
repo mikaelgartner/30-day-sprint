@@ -319,7 +319,7 @@ BookBuddy is a simple book search app powered by the Open Library API. Users can
 
 ---
 
-### ✅ Achievements
+## ✅ Achievements
 
 - Refactored the entire toast notification system across all pages:
   - Introduced `#toast-global` and `#toast-modal` containers
@@ -345,7 +345,7 @@ BookBuddy is a simple book search app powered by the Open Library API. Users can
 
 ---
 
-### 📚 Learnings
+## 📚 Learnings
 
 - **Scoped feedback matters** — separating modal vs global toasts improves clarity, accessibility, and emotional tone
 - **Modular CSS and JS reduce bugs** — centralizing logic and styling avoids duplication and ensures consistency
@@ -354,12 +354,11 @@ BookBuddy is a simple book search app powered by the Open Library API. Users can
 
 ---
 
-### 🎉 Emotional Impact
+## 🎉 Emotional Impact
 
 BookBuddy now feels alive. Every action — from saving a favorite to clearing the bookshelf — is met with clear, animated, scoped feedback.  
 The toast system is no longer just functional; it’s expressive, modular, and delightful.
 
 This was a polish pass that turned friction into flow.
-
 
 ---
