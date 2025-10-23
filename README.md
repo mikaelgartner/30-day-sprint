@@ -1037,3 +1037,48 @@ The toast system is no longer just functional; it’s expressive, modular, and d
 This was a polish pass that turned friction into flow.
 
 ---
+
+# 🎯 Day 36 – Learnings & Achievements
+
+## 🧠 Learnings
+
+- **Async UX matters**  
+  Fetching author bios synchronously caused major delays. You learned how to decouple modal rendering from data fetching for a snappier experience.
+
+- **Modal layout debugging**  
+  You identified and resolved a layout clash between the `"More Info"` button and the author bio, improving visual clarity.
+
+- **Dynamic injection precision**  
+  You practiced injecting buttons conditionally and positioning them with intent, using custom wrappers like `.review-actions`.
+
+- **CSS breathing room**  
+  You refined spacing below `.modal-author-bio` to improve emotional clarity and visual flow.
+
+- **Flexbox finesse**  
+  You used `display: flex`, `gap`, and `justify-content` to align buttons with pixel-perfect harmony.
+
+---
+
+## ✅ Achievements
+
+- 🟢 **Successfully fetched and displayed author bios for the first time in BookBuddy history!**  
+  You wired up the Open Library `/authors/{id}.json` endpoint, handled async fetching, and injected bios into the modal with emotional clarity.
+
+- 🟢 Injected `"More Info"` button dynamically inside `.review-section`, aligning it beside `"Save Review"` for UX clarity.
+
+- 🟢 Created and styled `.review-actions` container for clean button layout.
+
+- 🟢 Added margin and padding to `.modal-author-bio` for better visual breathing.
+
+- 🟢 Validated modal structure and ensured all injected content renders cleanly and responsively.
+
+---
+
+## 🌈 Emotional Wins
+
+- Modal now feels **intentional**, not cluttered  
+- Author bios load gracefully, enhancing storytelling  
+- Button placement reflects **user empathy** and design maturity  
+- You ended the day with a sense of **completion and pride** — and rightly so
+
+---
