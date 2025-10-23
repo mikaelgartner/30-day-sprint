@@ -159,6 +159,20 @@ async function fetchTopRatedBooks() {
   }
 }
 
+// Utility: Fetch author bio from Open Library
+async function fetchAuthorBio(authorKey) {
+  try {
+    const res = await fetch(`https://openlibrary.org/authors/${authorKey}.json`);
+    const data = await res.json();
+    return typeof data.bio === "string" ? data.bio : data.bio?.value || null;
+  } catch (err) {
+    console.error("Error fetching author bio", err);
+    return null;
+  }
+}
+
+
+// Function to show book modal
 async function showBookModal(book, isFromBookShelf = false) {
   const modal = document.getElementById("book-modal");
   const modalBody = document.getElementById("modal-body");
@@ -172,6 +186,7 @@ async function showBookModal(book, isFromBookShelf = false) {
   const year = book.first_publish_year || "N/A";
   const coverId = book.cover_i || book.cover_id;
   const workKey = book.key || book.work_key?.[0];
+  const authorKey = book.author_key?.[0];
 
 
   if (coverId) {
@@ -201,6 +216,18 @@ async function showBookModal(book, isFromBookShelf = false) {
     }
   }
 
+  // Then fetch and inject author bio
+  if (authorKey) {
+    fetchAuthorBio(authorKey).then(bio => {
+      if (bio) {
+        document.querySelector(".modal-author-bio").innerHTML = `
+        <h3>About the Author</h3>
+        <p>${bio}</p>
+        `;
+      }
+    });
+  }
+
   // Injecting modal content dynamically through return statement
  modalBody.innerHTML = `
   <h2>${title}</h2>
@@ -227,7 +254,10 @@ async function showBookModal(book, isFromBookShelf = false) {
         <label for="review-${book._key}"><strong>Your Review:</strong></label>
         <textarea id="review-${book._key}" placeholder="Write a Review">${existingReview}</textarea>
 
-        <button onclick="saveReview('${book._key}')">Save Review</button>
+        <div class="review-actions">
+          <button onclick="saveReview('${book._key}')">Save Review</button>
+          <button id="more-info">More Info</button>
+        </div>
       </div>
     `;
   })() : ""}

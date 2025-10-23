@@ -458,14 +458,13 @@ footer p {
   padding-bottom: 2rem;
   flex-grow: 1;
   flex-shrink: 1;
-  min-height: 350px;
+  min-height: 300px;
 }
 .modal-footer {
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--divider-color);
 }
 .modal-content p {
     font-size: 1rem;
@@ -480,6 +479,11 @@ footer p {
 .modal-footer button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
+}
+
+.modal-author-bio {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
 }
 
 .review-section {
@@ -527,6 +531,19 @@ footer p {
 .review-section option {
     color: var(--accent-hover);
     font-size: 1.2rem;
+}
+
+.review-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review-actions button {
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
 }
 
 .stars {
