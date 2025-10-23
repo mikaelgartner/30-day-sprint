@@ -402,7 +402,25 @@ footer p {
   flex-direction: row;
   gap: 1.5rem;
   align-items: stretch;
+  position: relative;
 }
+.modal-actions {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: var(--bg-color);
+    border-radius: 6px;
+}
+.modal-actions button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 #modal-cover {
   height: 100%;
   max-height: 100%;
@@ -435,7 +453,12 @@ footer p {
   width: 100%;
   padding-top: 1rem;
   border-top: 1px solid var(--divider-color);
-  overflow-y: auto;
+  overflow-y: visible;
+  max-height: none;
+  padding-bottom: 2rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 350px;
 }
 .modal-footer {
   display: flex;
