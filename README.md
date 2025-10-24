@@ -1082,3 +1082,27 @@ This was a polish pass that turned friction into flow.
 - You ended the day with a sense of **completion and pride** — and rightly so
 
 ---
+
+# 📚 Day 37: Learnings and Achievements
+
+## ✅ Technical Wins
+- Created a brand-new Book News feature, including `book-news.html` and `book-news.js`
+- Connected to The Guardian’s RSS feed and parsed live book-related articles via API
+- Injected dynamic content into the DOM with semantic structure and clean layout
+- Refactored how RSS descriptions are rendered to preserve native HTML and avoid nesting issues
+- Scoped and tested multiple CSS selectors to target and style “Continue reading” links
+- Diagnosed layout inconsistencies caused by injected HTML and resolved alignment issues
+- Balanced centered headlines with left-aligned body content for improved readability
+
+## 🎨 UI/UX Polish
+- Established consistent visual rhythm across all `.news-item` blocks
+- Restored natural flow to article descriptions and inline links
+- Preserved centered headline links as emotional anchors while refining body alignment
+- Integrated external content seamlessly into BookBuddy’s thematic design
+
+## 🧠 Learnings
+- Injected HTML from external sources requires careful handling to avoid layout drift
+- CSS specificity and rule order are critical when styling dynamic content
+- DOM inspection is essential for diagnosing invisible bugs and confirming selector behavior
+
+---
