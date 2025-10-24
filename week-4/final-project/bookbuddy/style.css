@@ -869,4 +869,76 @@ footer p {
     animation: fadeInUp 0.4s ease forwards;
 }
 
+.news-feed {
+    padding: 1rem;
+}
 
+.news-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.news-item h2 {
+    text-align: center;
+}
+
+.news-item h2 a {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.news-item h2 a:hover {
+    text-decoration: underline;
+}
+
+.news-item a {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-item p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.news-item p a:hover {
+    text-decoration: underline;
+}
+
+.news-item small {
+    text-align: left;
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+}
+
+.news-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+
+.news-item p {
+  text-align: left;
+}
+
+.news-item p a {
+  display: inline;
+  margin: 0;
+  color: var(--text-color);
+  text-decoration: none;
+}
