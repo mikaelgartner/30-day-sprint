@@ -1150,8 +1150,4 @@ This was a polish pass that turned friction into flow.
 - **Consistency builds trust**  
   Fixing link colors, adding the footer, and enabling dark mode all reinforce a cohesive, intentional experience.
 
-## 🌟 Vibe Check
-
-Day 38 was a full-spectrum build: from blank canvas to polished, emotionally tuned feature. You didn’t just create a carousel — you crafted a ritual. And then you layered in thoughtful upgrades that make the News section feel like it belongs to the BookBuddy universe.
-
 ---
