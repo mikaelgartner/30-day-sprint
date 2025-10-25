@@ -876,7 +876,7 @@ footer p {
 .news-item {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 0.5s ease forwards;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--divider-color);
@@ -939,6 +939,72 @@ footer p {
 .news-item p a {
   display: inline;
   margin: 0;
-  color: var(--text-color);
+  color: var(--accent-hover);
   text-decoration: none;
+}
+
+.news-carousel {
+    overflow: hidden;
+    background-color: #222;
+    color: #ffa500;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    animation: scrollHeadlines 18s linear infinite;
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+.carousel-track a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollHeadlines {
+    0% { transform: translateX(30%); }
+    100% { transform: translateX(-100%); }
+}
+
+.carousel-fade {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-fade::before,
+.carousel-fade::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-fade::before {
+    left: 0;
+    background: linear-gradient(to right, #222 0%, transparent 100%);
+}
+
+.carousel-fade::after {
+    right: 0;
+    background: linear-gradient(to left, #222 0%, transparent 100%);
+}
+
+
+@media (max-width: 600px) {
+    .carousel-track {
+        font-size: 0.85rem;
+        gap: 20px;
+    }
 }

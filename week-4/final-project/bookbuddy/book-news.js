@@ -1,3 +1,16 @@
+function injectCarouselHeadlines(articles) {
+    const track = document.getElementById("carouselTrack");
+    const topHeadlines = articles.slice(0, 5);  // Top 5 Headlines to be shown
+
+    topHeadlines.forEach(item => {
+        const link = document.createElement("a");
+        link.href = item.link;
+        link.textContent = `🔥${item.title}`;   // Add fire emoji before headline title
+        link.target = "_blank";
+        track.appendChild(link);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".news-content");
 
@@ -11,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 container.innerHTML = `<p>No book news available right now. Try again later.</p>`;
                 return;
             }
+
+            const shuffled = [...data.items].sort(() => 0.5 - Math.random());
+            injectCarouselHeadlines(shuffled.slice(0, 5));  // randomizing and injecting carousel headlines    
 
             const newsSection = document.createElement("section");
             newsSection.classList.add("news-feed");

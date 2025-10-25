@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+        window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("bookbuddy-theme") || "light";
+        document.body.classList.add(savedTheme);
+        });
+        </script>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>BookBuddy Book News</title>
         <link rel="stylesheet" href="style.css" />
         <script src="book-news.js" defer></script>
+        <script src="utils.js" defer></script>
     </head>
     <body>
         <div class="page-wrapper">
@@ -22,12 +30,23 @@
                     <a href="settings.html">Settings</a>
                 </nav>
             </header>
+            <div class="news-carousel">
+                <div class="carousel-fade">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Headlines will be injected here. -->
+                    </div>
+                </div>
+            </div>
 
             <main>
                 <div class="news-content">
                     <!-- Injected articles will go here -->
                 </div>
             </main>
+            <button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
+            <footer>
+                <p>&copy; BookBuddy all rights reserved 2025</p>
+            </footer>
         </div>
     </body>
 </html>
